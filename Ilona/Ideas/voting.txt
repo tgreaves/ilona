@@ -1,0 +1,75 @@
+
+Date: 12 Jun 97  12:31:28
+From: Rune Jacobsen
+To:   Tristan Greaves
+Subj: RE: June §AmigaCafe Elections
+
+^DOMAIN fidonet 2:443/13.92 fidonet 2:999/99.0
+^INTL 2:443/13 2:999/99
+^TOPT 92
+^MSGID: 2:999/99.0 <01BC7664.41F1BCE0@doffen.euroline.no>
+^REPLYADDR rune@euroline.no
+^PID: AmiGate 1.6 (13.11.95)
+^
+^X-Authentication-Warning: fido.euroline.no: majordomo set sender to
+owner-acgovs@fido.euroline.no using -f
+^X-UIDL: 7ed32ee020028fed4229a369a916766c
+^Status: RO
+^X-Status: 
+
+>Hi Runey-babes! ;)
+
+;)
+
+>Well, here's the bad news: I'll be running for re-election, so there. ;)
+
+;)^2
+
+>Regarding the time, it is going to be kinda difficult for me then (That is
+>the exact time when I am shifting from uni to home). If I recall, we had
+>the same situation last time. Are you doing this delibarately or
+>something? ;)
+
+Actually, I think historically we have always had problems with UK uni 
+people leaving pretty much the same day as the elections. I did write a 
+mail to the UK school minister type thing to get them to adjust their 
+schedule to fit #AmigaCafe, but they didn't take me seriously :|
+
+>I would *really* appreciate it if you could advance the date of the
+>election forward by 7 days. *beg, beg, beg*
+
+It's not a problem for me; Anyone else have any wild objections?
+
+>That would also give me time to have Ilona fully in vote mode. ;) (Rune,
+>can you send me the specs for what she should accept for input?)
+
+:) The normal procedure for a vote on Henry is as follows (these are the 
+messages I send to it)
+
+CreateVote #AmigaCafe 10         (Create a vote called #AmigaCafe with max. 10
+
+votes per voter)
+AddCand #AmigaCafe Nick1 Nick2 Nick3 (Add them nicks to the candidate list)
+OpenVote #AmigaCafe                 (Just to allow voting)
+Vote #AmigaCafe Nick4 Nick13 Nick29  (Give votes to those nicks)
+
+I guess #4 is the most important one to have identical, as that is the only 
+one the users will use. Just a space separated list of nicks. Also, if a 
+wrong nick is given or too many votes are attempted, Henry will discard the 
+whole thing to give people a chance to review their errors and repent.
+
+>That's it really. :)
+
+Wohoo! ;)
+
+--
+Shit
+
+
+
+
+
+^Via 2:443/13.92@fidonet 21 Jun 97  13:51:13 (Mail Manager v1.22x/n #1505)
+
+
+

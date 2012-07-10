@@ -1,0 +1,193 @@
+[15-Apr-97 17:23:05] Ilona v1.21 opened.
+[15-Apr-97 17:23:06] Looking for host irc.pi.net
+[15-Apr-97 17:23:07] Attempting connection to irc.pi.net (port 7000).
+[15-Apr-97 17:23:12] Connected! Sending handshake.
+[15-Apr-97 17:23:27] Welcome to the Internet Relay Network Ilona
+[15-Apr-97 17:23:28] Joining #AmigaCafe
+[15-Apr-97 17:25:25] SAY HI Rael. :) (from Mercenary)
+[15-Apr-97 17:27:14] ADDUSER (Rael newi.ac.uk) request from Mercenary
+[15-Apr-97 17:27:37] DCC Chat request received from Shitlips (Server ID: 3270146614, Port 1025) on Ilona port 1
+[15-Apr-97 17:27:37] DCC Port 1: Attempting DCC Chat connection to 3270146614 (port 1025)
+[15-Apr-97 17:27:38] DCC Port 1: DCC Chat could not be established (Error code 65)
+[15-Apr-97 17:27:38] DCC Port 1: DCC Chat connection failed, with error code 65
+[15-Apr-97 17:27:38] Wait() failure... Errno=9
+[15-Apr-97 17:27:41] Error: Couldn't read from socket.
+[15-Apr-97 17:27:43] Ilona v1.21 closed.
+
+[15-Apr-97 17:35:29] Ilona v1.21 opened.
+[15-Apr-97 17:35:29] Looking for host irc.pi.net
+[15-Apr-97 17:35:30] Attempting connection to irc.pi.net (port 7000).
+[15-Apr-97 17:35:30] Connected! Sending handshake.
+[15-Apr-97 17:35:33] Server Error: Link: Ilona[ppp348.enterprise.net] by Diemen.NL.EU.undernet.org (No more connections)
+[15-Apr-97 17:35:33] Attempting connection to irc.pi.net (port 7000).
+[15-Apr-97 17:35:34] Connected! Sending handshake.
+[15-Apr-97 17:35:43] Server Error: Link: Ilona[ppp348.enterprise.net] by Diemen.NL.EU.undernet.org (No more connections)
+[15-Apr-97 17:35:44] Attempting connection to irc.pi.net (port 7000).
+[15-Apr-97 17:35:44] Connected! Sending handshake.
+[15-Apr-97 17:36:14] Welcome to the Internet Relay Network Ilona
+[15-Apr-97 17:36:15] Joining #AmigaCafe
+[15-Apr-97 17:36:29] DCC Chat request received from Mercenary (Server ID: 3259548766, Port 1039) on Ilona port 1
+[15-Apr-97 17:36:29] DCC Port 1: Attempting DCC Chat connection to 3259548766 (port 1039)
+[15-Apr-97 17:36:30] DCC Port 1: DCC Chat could not be established (Error code 65)
+[15-Apr-97 17:36:30] DCC Port 1: DCC Chat connection failed, with error code 65
+[15-Apr-97 17:36:30] DCC Chat request received from Rael (Server ID: 3242049898, Port 1462) on Ilona port 1
+[15-Apr-97 17:36:31] DCC Port 1: Attempting DCC Chat connection to 3242049898 (port 1462)
+[15-Apr-97 17:36:31] DCC Port 1: DCC Chat could not be established (Error code 65)
+[15-Apr-97 17:36:31] DCC Port 1: DCC Chat connection failed, with error code 65
+[15-Apr-97 17:38:56] Ilona v1.21 closed.
+
+[15-Apr-97 17:39:43] Ilona v1.21 opened.
+[15-Apr-97 17:39:43] Looking for host localhost
+[15-Apr-97 17:39:43] Attempting connection to localhost (port 7000).
+[15-Apr-97 17:39:43] Connected! Sending handshake.
+[15-Apr-97 17:40:13] Welcome to the Internet Relay Network Ilona
+[15-Apr-97 17:40:14] Joining #AmigaCafe
+[15-Apr-97 17:43:07] DCC Chat request received from Mercenary (Server ID: 2130706433, Port 1024) on Ilona port 1
+[15-Apr-97 17:43:07] DCC Port 1: Attempting DCC Chat connection to 2130706433 (port 1024)
+[15-Apr-97 17:43:07] DCC Port 1: DCC Chat connection was established.
+[15-Apr-97 17:43:08] DCC Port 1: DCC Chat connection established.
+[15-Apr-97 17:44:54] Ilona v1.21 closed.
+
+[15-Apr-97 17:45:22] Ilona v1.21 opened.
+[15-Apr-97 17:45:22] Looking for host irc.pi.net
+[15-Apr-97 17:45:22] Attempting connection to irc.pi.net (port 7000).
+[15-Apr-97 17:45:23] Connected! Sending handshake.
+[15-Apr-97 17:45:52] Server Error: Link: Ilona[ppp348.enterprise.net] by Diemen.NL.EU.undernet.org (No more connections)
+[15-Apr-97 17:45:54] Attempting connection to irc.pi.net (port 7000).
+[15-Apr-97 17:46:06] Connected! Sending handshake.
+[15-Apr-97 17:46:26] Server Error: Link: Ilona[ppp348.enterprise.net] by Diemen.NL.EU.undernet.org (No more connections)
+[15-Apr-97 17:46:26] Attempting connection to irc.pi.net (port 7000).
+[15-Apr-97 17:46:38] Connected! Sending handshake.
+[15-Apr-97 17:46:57] Welcome to the Internet Relay Network Ilona
+[15-Apr-97 17:46:57] Joining #AmigaCafe
+[15-Apr-97 17:47:08] ME slaps Undernet servers about. (from Mercenary)
+[15-Apr-97 17:47:15] VIEWUSER (rael) request from Mercenary
+[15-Apr-97 17:48:27] SHOWCOMMANDS request from Mercenary
+[15-Apr-97 17:50:19] DCC Chat request received from Mercenary (Server ID: 3259548766, Port 1040) on Ilona port 1
+[15-Apr-97 17:50:19] DCC Port 1: Attempting DCC Chat connection to 3259548766 (port 1040)
+[15-Apr-97 17:50:19] DCC Port 1: DCC Chat could not be established (Error code 65)
+[15-Apr-97 17:50:20] DCC Port 1: DCC Chat connection failed, with error code 65
+[15-Apr-97 18:06:55] DCC Chat request received from Rael (Server ID: 3242049898, Port 1465) on Ilona port 1
+[15-Apr-97 18:06:56] DCC Port 1: Attempting DCC Chat connection to 3242049898 (port 1465)
+[15-Apr-97 18:06:56] DCC Port 1: DCC Chat could not be established (Error code 65)
+[15-Apr-97 18:06:56] DCC Port 1: DCC Chat connection failed, with error code 65
+[15-Apr-97 18:11:20] CTCP VERSION (from Rael)
+[15-Apr-97 18:12:42] HELP request from Mercenary
+[15-Apr-97 18:13:01] CTCP PING 3434928 (from Mercenary)
+[15-Apr-97 18:13:12] DCC Chat request received from Mercenary (Server ID: 3259548766, Port 1041) on Ilona port 1
+[15-Apr-97 18:13:13] DCC Port 1: Attempting DCC Chat connection to 3259548766 (port 1041)
+[15-Apr-97 18:13:13] DCC Port 1: DCC Chat could not be established (Error code 65)
+[15-Apr-97 18:13:13] DCC Port 1: DCC Chat connection failed, with error code 65
+[15-Apr-97 18:14:58] ME prods Rael. (from Mercenary)
+[15-Apr-97 18:15:09] CTCP PING 3447441 (from Mercenary)
+[15-Apr-97 18:19:00] Ilona v1.21 closed.
+
+[15-Apr-97 18:46:08] Ilona v1.21 opened.
+[15-Apr-97 18:46:08] Looking for host localhost
+[15-Apr-97 18:46:09] Attempting connection to localhost (port 7000).
+[15-Apr-97 18:46:09] Connected! Sending handshake.
+[15-Apr-97 18:46:17] Ilona v1.21 closed.
+
+[15-Apr-97 18:52:23] Ilona v1.21 opened.
+[15-Apr-97 18:52:23] Looking for host localhost
+[15-Apr-97 18:52:23] Attempting connection to localhost (port 7000).
+[15-Apr-97 18:52:23] Connected! Sending handshake.
+[15-Apr-97 18:52:32] Ilona v1.21 closed.
+
+[15-Apr-97 19:15:58] Ilona v1.21 opened.
+[15-Apr-97 19:15:58] Looking for host localhost
+[15-Apr-97 19:15:59] Attempting connection to localhost (port 7000).
+[15-Apr-97 19:15:59] Connected! Sending handshake.
+[15-Apr-97 19:16:04] Ilona v1.21 closed.
+
+[15-Apr-97 20:02:57] Ilona v1.21 opened.
+[15-Apr-97 20:02:57] Looking for host irc.pi.net
+[15-Apr-97 20:02:57] Attempting connection to irc.pi.net (port 7000).
+[15-Apr-97 20:02:58] Connected! Sending handshake.
+[15-Apr-97 20:03:02] Server Error: Link: Ilona[ppp160.enterprise.net] by Diemen.NL.EU.undernet.org (No more connections)
+[15-Apr-97 20:03:03] Attempting connection to irc.pi.net (port 7000).
+[15-Apr-97 20:03:06] Connected! Sending handshake.
+[15-Apr-97 20:03:09] Welcome to the Internet Relay Network Ilona
+[15-Apr-97 20:03:09] Joining #AmigaCafe
+[15-Apr-97 20:03:32] DCC Chat request received from Rael (Server ID: 3242049907, Port 1158) on Ilona port 1
+[15-Apr-97 20:03:32] DCC Port 1: Attempting DCC Chat connection to 3242049907 (port 1158)
+[15-Apr-97 20:03:32] DCC Port 1: DCC Chat could not be established (Error code 65)
+[15-Apr-97 20:03:33] DCC Port 1: DCC Chat connection failed, with error code 65
+[15-Apr-97 20:04:49] TOPIC (Blah) request from Mercenary
+[15-Apr-97 20:05:19] CTCP PING 861149073 (from Rael)
+[15-Apr-97 20:05:20] CTCP PING 861149074 (from Rael)
+[15-Apr-97 20:05:20] CTCP PING 861149075 (from Rael)
+[15-Apr-97 20:05:21] CTCP PING 861149076 (from Rael)
+[15-Apr-97 20:05:22] CTCP PING 861149077 (from Rael)
+[15-Apr-97 20:05:24] CTCP PING 861149078 (from Rael)
+[15-Apr-97 20:05:24] CTCP PING 861149079 (from Rael)
+[15-Apr-97 20:05:26] CTCP PING 861149080 (from Rael)
+[15-Apr-97 20:05:27] CTCP PING 861149081 (from Rael)
+[15-Apr-97 20:05:29] CTCP PING 861149082 (from Rael)
+[15-Apr-97 20:05:30] CTCP PING 861149083 (from Rael)
+[15-Apr-97 20:05:33] CTCP PING 861149085 (from Rael)
+[15-Apr-97 20:05:33] CTCP PING 861149086 (from Rael)
+[15-Apr-97 20:05:35] CTCP PING 861149087 (from Rael)
+[15-Apr-97 20:05:38] KICK (Rael Ping Flooding!) request from Mercenary
+[15-Apr-97 20:05:38] CTCP PING 861149088 (from Rael)
+[15-Apr-97 20:05:39] KICK: Rael was kicked from #AmigaCafe by Ilona
+[15-Apr-97 20:05:40] CTCP PING 861149089 (from Rael)
+[15-Apr-97 20:05:41] CTCP PING 861149090 (from Rael)
+[15-Apr-97 20:05:43] CTCP PING 861149091 (from Rael)
+[15-Apr-97 20:05:46] CTCP PING 861149092 (from Rael)
+[15-Apr-97 20:05:51] CTCP PING 861149093 (from Rael)
+[15-Apr-97 20:05:52] CTCP PING 861149094 (from Rael)
+[15-Apr-97 20:05:52] CTCP PING 861149095 (from Rael)
+[15-Apr-97 20:05:53] CTCP PING 861149096 (from Rael)
+[15-Apr-97 20:05:55] CTCP PING 861149097 (from Rael)
+[15-Apr-97 20:05:57] CTCP PING 861149098 (from Rael)
+[15-Apr-97 20:05:59] CTCP PING 861149099 (from Rael)
+[15-Apr-97 20:06:01] CTCP PING 861149100 (from Rael)
+[15-Apr-97 20:06:05] CTCP PING 861149101 (from Rael)
+[15-Apr-97 20:06:05] CTCP PING 861149102 (from Rael)
+[15-Apr-97 20:06:07] CTCP PING 861149103 (from Rael)
+[15-Apr-97 20:06:09] CTCP PING 861149104 (from Rael)
+[15-Apr-97 20:06:12] CTCP PING 861149105 (from Rael)
+[15-Apr-97 20:06:13] CTCP PING 861149106 (from Rael)
+[15-Apr-97 20:06:55] BAN (rael@newi.ac.uk) request from Mercenary
+[15-Apr-97 20:07:00] UNBAN (rael@newi.ac.uk) request from Mercenary
+[15-Apr-97 20:09:47] JOIN #eastern_tower (from Mercenary)
+[15-Apr-97 20:10:18] <Mercenary> hi. :)
+[15-Apr-97 20:10:18] CTCP PING AmIRC 608648908 955940 (from Luke11)
+[15-Apr-97 20:10:26] Kicked from #eastern_tower by Rael
+[15-Apr-97 20:10:26] Joining #eastern_tower
+[15-Apr-97 20:10:40] JOIN #amigacafe (from Mercenary)
+[15-Apr-97 20:10:56] KICK (Rael no bots! (You quitted Peterson too quickly, so I'll get you instead) ;)) request from Mercenary
+[15-Apr-97 20:10:57] KICK: Rael was kicked from #amigacafe by Ilona
+[15-Apr-97 20:19:05] CTCP VERSION (from Mercenary)
+[15-Apr-97 20:19:19] QUIT command received from Mercenary
+[15-Apr-97 20:19:19] There were 9 joins and 4 parts.
+[15-Apr-97 20:19:19] There were 49 public messages.
+[15-Apr-97 20:19:20] Ilona v1.21 closed.
+
+[15-Apr-97 20:39:20] Ilona v1.21 opened.
+[15-Apr-97 20:39:21] Looking for host localhost
+[15-Apr-97 20:39:21] Attempting connection to localhost (port 7000).
+[15-Apr-97 20:39:21] Connected! Sending handshake.
+[15-Apr-97 20:39:51] Welcome to the Internet Relay Network Ilona
+[15-Apr-97 20:39:52] Joining #AmigaCafe
+[15-Apr-97 20:53:26] Ilona v1.21 opened.
+[15-Apr-97 20:53:26] Looking for host localhost
+[15-Apr-97 20:53:27] Attempting connection to localhost (port 7000).
+[15-Apr-97 20:53:27] Connected! Sending handshake.
+[15-Apr-97 20:53:59] Welcome to the Internet Relay Network Ilona
+[15-Apr-97 20:53:59] Joining #AmigaCafe
+[15-Apr-97 20:58:50] Ilona v1.21 opened.
+[15-Apr-97 20:58:50] Looking for host localhost
+[15-Apr-97 20:58:50] Attempting connection to localhost (port 7000).
+[15-Apr-97 20:58:51] Connected! Sending handshake.
+[15-Apr-97 20:59:20] Welcome to the Internet Relay Network Ilona
+[15-Apr-97 20:59:20] Joining #AmigaCafe
+[15-Apr-97 20:59:56] SHOWCOMMANDS request from Mercenary
+[15-Apr-97 21:00:22] RAW (TOPIC :Flibble) request from Mercenary
+[15-Apr-97 21:00:41] RAW (TOPIC #AmigaCafe :Flibble) request from Mercenary
+[15-Apr-97 21:00:59] QUIT command received from Mercenary
+[15-Apr-97 21:00:59] There were 2 joins and 0 parts.
+[15-Apr-97 21:01:00] There were 0 public messages.
+[15-Apr-97 21:01:00] Ilona v1.21 closed.
+

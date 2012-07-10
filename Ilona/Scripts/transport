@@ -1,0 +1,37 @@
+; Transport script
+; amiga -> PC DOS
+; For transfer to Linux
+
+; rexx stuff not transported.
+
+echo "Transferring LogBot files to PC floppy disk...*n"
+
+echo "Copying: .c files"
+
+copy main.c pc0:
+copy config.c pc0:
+copy logging.c pc0:
+copy server.c pc0:
+copy parsing.c pc0:
+copy dcc.c pc0:
+
+echo "Copying: .h files"
+
+copy main.h pc0:
+copy config.h pc0:
+copy logging.h pc0:
+copy server.h pc0:
+copy parsing.h pc0:
+copy dcc.h pc0:
+
+echo "Copying: Config/userlist files"
+
+copy ilona.config pc0:ilona.cfg
+copy userfile pc0:userfile.txt
+
+echo "Copying: History files"
+
+copy history pc0:
+
+echo "*nComplete!"
+

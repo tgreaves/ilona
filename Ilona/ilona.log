@@ -1,0 +1,215 @@
+[24-Apr-97 01:01:44] Ilona v1.3 opened.
+[24-Apr-97 01:01:44] Looking for host localhost
+[24-Apr-97 01:01:45] Attempting connection to localhost (port 7000).
+[24-Apr-97 01:01:45] Connected! Sending handshake.
+[24-Apr-97 01:02:13] Welcome to the Internet Relay Network Ilona
+[24-Apr-97 01:02:13] Joining #AmigaCafe
+[24-Apr-97 01:02:27] SHOWCOMMANDS request from Mercenary
+[24-Apr-97 01:02:31] Ilona v1.3 closed.
+
+[24-Apr-97 01:02:46] Ilona v1.3 opened.
+[24-Apr-97 01:02:46] Looking for host localhost
+[24-Apr-97 01:02:46] Attempting connection to localhost (port 7000).
+[24-Apr-97 01:02:46] Connected! Sending handshake.
+[24-Apr-97 01:03:15] Welcome to the Internet Relay Network Ilona
+[24-Apr-97 01:03:15] Joining #AmigaCafe
+[24-Apr-97 01:03:44] SHOWCOMMANDS request from Mercenary
+[24-Apr-97 01:03:48] LOADCOMMANDS request received from Mercenary
+[24-Apr-97 01:04:05] TROUT () command from Mercenary
+[24-Apr-97 01:04:14] DIE () command from Mercenary
+[24-Apr-97 01:04:25] DIE (mercenary) command from Mercenary
+[24-Apr-97 01:04:26] KICK: Mercenary was kicked from #AmigaCafe by Ilona
+[24-Apr-97 01:04:41] DIE () command from Mercenary
+[24-Apr-97 01:04:42] DIE () command from Mercenary
+[24-Apr-97 01:04:48] FRIENDLY () command from Mercenary
+[24-Apr-97 01:05:40] CTCP VERSION (from Mercenary)
+[24-Apr-97 01:07:46] QUIT command received from Mercenary
+[24-Apr-97 01:07:46] There were 3 joins and 1 parts.
+[24-Apr-97 01:07:46] There were 9 public messages.
+[24-Apr-97 01:07:46] Ilona v1.3 closed.
+
+[24-Apr-97 01:07:56] Ilona v1.3 opened.
+[24-Apr-97 01:07:56] Looking for host localhost
+[24-Apr-97 01:07:57] Attempting connection to localhost (port 7000).
+[24-Apr-97 01:07:57] Connected! Sending handshake.
+[24-Apr-97 01:08:25] Welcome to the Internet Relay Network Ilona
+[24-Apr-97 01:08:25] Joining #AmigaCafe
+[24-Apr-97 01:08:35] DIE () command from Mercenary
+[24-Apr-97 01:08:36] KICK: Mercenary was kicked from #AmigaCafe by Ilona
+[24-Apr-97 01:08:43] DIE (ilona) command from Mercenary
+[24-Apr-97 01:08:43] Kicked from #AmigaCafe by Ilona
+[24-Apr-97 01:08:43] Joining #AmigaCafe
+[24-Apr-97 01:09:17] LOADCOMMANDS request received from Mercenary
+[24-Apr-97 01:09:31] FEMALE () command from Mercenary
+[24-Apr-97 01:09:34] FEMALE () command from Mercenary
+[24-Apr-97 01:11:00] TROUT () command from Mercenary
+[24-Apr-97 01:11:03] TROUT (ilona) command from Mercenary
+[24-Apr-97 01:11:11] <Mercenary> suicided 
+[24-Apr-97 01:11:13] <Mercenary> suicide 
+[24-Apr-97 01:11:19] SUCIDE () command from Mercenary
+[24-Apr-97 01:11:33] LOADCOMMANDS request received from Mercenary
+[24-Apr-97 01:11:35] SUICIDE () command from Mercenary
+[24-Apr-97 01:11:41] PINCH (espresso) command from Mercenary
+[24-Apr-97 01:11:49] BACKFLIP () command from Mercenary
+[24-Apr-97 01:11:55] ATARI () command from Mercenary
+[24-Apr-97 01:12:03] DEOPME () command from Mercenary
+[24-Apr-97 01:12:13] NOSEX () command from Mercenary
+[24-Apr-97 01:12:28] DISCHARGE () command from Mercenary
+[24-Apr-97 01:12:35] DISCHARGE () command from Mercenary
+[24-Apr-97 01:12:36] KICK: Mercenary was kicked from #AmigaCafe by Ilona
+[24-Apr-97 01:24:36] Ilona v1.3 closed.
+
+[24-Apr-97 01:47:01] Ilona v1.3 opened.
+[24-Apr-97 01:47:02] Looking for host localhost
+[24-Apr-97 01:47:02] Attempting connection to localhost (port 7000).
+[24-Apr-97 01:47:02] Connected! Sending handshake.
+[24-Apr-97 01:47:30] Welcome to the Internet Relay Network Ilona
+[24-Apr-97 01:47:30] Joining #AmigaCafe
+[24-Apr-97 01:47:35] <Mercenary> die 
+[24-Apr-97 01:47:39] <Mercenary> died 
+[24-Apr-97 01:47:43] TROUT (mercenary) command from Mercenary
+[24-Apr-97 01:47:58] Ilona v1.3 closed.
+
+[24-Apr-97 01:49:33] Ilona v1.3 opened.
+[24-Apr-97 01:49:33] Looking for host localhost
+[24-Apr-97 01:49:33] Attempting connection to localhost (port 7000).
+[24-Apr-97 01:49:33] Connected! Sending handshake.
+[24-Apr-97 01:49:38] Ilona v1.3 closed.
+
+[24-Apr-97 01:52:34] Ilona v1.3 opened.
+[24-Apr-97 01:52:34] Looking for host localhost
+[24-Apr-97 01:52:34] Attempting connection to localhost (port 7000).
+[24-Apr-97 01:52:35] Connection could not be established.
+[24-Apr-97 01:52:36] Ilona v1.3 closed.
+
+[24-Apr-97 01:54:03] Ilona v1.3 opened.
+[24-Apr-97 01:54:05] Error: Maximum number of users exceeded.
+[24-Apr-97 01:54:05] Ilona v1.3 closed.
+
+[24-Apr-97 02:50:26] Ilona v1.3 opened.
+[24-Apr-97 02:50:28] Error: Maximum number of users exceeded.
+[24-Apr-97 02:50:28] Ilona v1.3 closed.
+
+[24-Apr-97 02:50:34] Ilona v1.3 opened.
+[24-Apr-97 02:50:34] Looking for host localhost
+[24-Apr-97 02:50:34] Attempting connection to localhost (port 7000).
+[24-Apr-97 02:50:35] Connected! Sending handshake.
+[24-Apr-97 02:51:04] Welcome to the Internet Relay Network Ilona
+[24-Apr-97 02:51:04] Joining #AmigaCafe
+[24-Apr-97 02:51:12] <Mercenary> die 
+[24-Apr-97 02:51:14] <Mercenary> die 
+[24-Apr-97 02:51:16] <Mercenary> die 
+[24-Apr-97 02:51:17] <Mercenary> die 
+[24-Apr-97 02:51:21] <Mercenary> trout 
+[24-Apr-97 02:51:28] Ilona v1.3 closed.
+
+[27-Apr-97 00:16:44] Ilona v1.4 opened.
+[27-Apr-97 00:16:44] Looking for host localhost
+[27-Apr-97 00:16:44] Attempting connection to localhost (port 7000).
+[27-Apr-97 00:16:44] Connected! Sending handshake.
+[27-Apr-97 00:17:13] Welcome to the Internet Relay Network Ilona
+[27-Apr-97 00:17:13] Joining #AmigaCafe
+[27-Apr-97 00:18:08] <Mercenary> slap mercenary
+[27-Apr-97 00:18:13] <Mercenary> trout mercenary
+[27-Apr-97 00:18:20] <Mercenary> friendly 
+[27-Apr-97 00:18:34] <Mercenary> trout 
+[27-Apr-97 00:18:59] LOADCOMMANDS request received from Mercenary
+[27-Apr-97 00:19:08] Ilona v1.4 closed.
+
+[27-Apr-97 00:22:47] Ilona v1.4 opened.
+[27-Apr-97 00:22:47] Looking for host localhost
+[27-Apr-97 00:22:47] Attempting connection to localhost (port 7000).
+[27-Apr-97 00:22:47] Connected! Sending handshake.
+[27-Apr-97 00:23:15] Welcome to the Internet Relay Network Ilona
+[27-Apr-97 00:23:16] Joining #AmigaCafe
+[27-Apr-97 00:23:26] TROUT (mercenary) command from Mercenary
+[27-Apr-97 00:23:29] TROUT (mercenary) command from Mercenary
+[27-Apr-97 00:26:32] LEAVE request from Mercenary
+[27-Apr-97 00:26:38] JOIN #amigacafe flibble (from Mercenary)
+[27-Apr-97 00:26:49] LEAVE request from Mercenary
+[27-Apr-97 00:26:53] JOIN #amigacafe (from Mercenary)
+[27-Apr-97 00:26:59] JOIN #amigacafe flibble (from Mercenary)
+[27-Apr-97 00:28:41] LEAVE request from Mercenary
+[27-Apr-97 00:28:44] JOIN #amigacafe (from Mercenary)
+[27-Apr-97 11:53:09] Ilona v1.4 closed.
+
+[27-Apr-97 11:54:14] Ilona v1.4 opened.
+[27-Apr-97 11:54:14] Looking for host localhost
+[27-Apr-97 11:54:14] Attempting connection to localhost (port 7000).
+[27-Apr-97 11:54:15] Connected! Sending handshake.
+[27-Apr-97 11:54:43] Welcome to the Internet Relay Network Ilona
+[27-Apr-97 11:54:43] Joining #AmigaCafe
+[27-Apr-97 15:50:15] Ilona v1.4 closed.
+
+[09-Jun-97 18:14:17] Ilona v1.4 opened.
+[09-Jun-97 18:14:17] Looking for host localhost
+[09-Jun-97 18:14:17] Attempting connection to localhost (port 7000).
+[09-Jun-97 18:14:18] Connection could not be established.
+[09-Jun-97 18:14:19] Ilona v1.4 closed.
+
+[27-Jun-97 23:50:17] Ilona v1.4 opened.
+[27-Jun-97 23:50:17] Looking for host localhost
+[27-Jun-97 23:50:17] Attempting connection to localhost (port 7000).
+[27-Jun-97 23:50:19] Connection could not be established.
+[27-Jun-97 23:50:19] Ilona v1.4 closed.
+
+[27-Jun-97 23:50:43] Ilona v1.4 opened.
+[27-Jun-97 23:50:43] Looking for host irc.pi.net
+[27-Jun-97 23:50:43] Attempting connection to irc.pi.net (port 7000).
+[27-Jun-97 23:50:44] Connected! Sending handshake.
+[27-Jun-97 23:50:47] Server Error: Link: Ilona[194.72.196.233] by Diemen.NL.EU.undernet.org (No more connections)
+[27-Jun-97 23:50:47] Attempting connection to irc.pi.net (port 7000).
+[27-Jun-97 23:50:48] Connected! Sending handshake.
+[27-Jun-97 23:50:53] Server Error: Link: Ilona[194.72.196.233] by Diemen.NL.EU.undernet.org (No more connections)
+[27-Jun-97 23:50:53] Attempting connection to irc.pi.net (port 7000).
+[27-Jun-97 23:50:54] Connected! Sending handshake.
+[27-Jun-97 23:51:02] Server Error: Link: Ilona[194.72.196.233] by Diemen.NL.EU.undernet.org (No more connections)
+[27-Jun-97 23:51:02] Attempting connection to irc.pi.net (port 7000).
+[27-Jun-97 23:51:03] Connected! Sending handshake.
+[27-Jun-97 23:51:07] Server Error: Link: Ilona[194.72.196.233] by Diemen.NL.EU.undernet.org (No more connections)
+[27-Jun-97 23:51:08] Attempting connection to irc.pi.net (port 7000).
+[27-Jun-97 23:51:08] Connected! Sending handshake.
+[27-Jun-97 23:51:29] Welcome to the Internet Relay Network Ilona
+[27-Jun-97 23:51:29] Joining #AmigaCafe
+[27-Jun-97 23:51:59] Warning: Illegal LISTUSERS request from Mewcenary
+[28-Jun-97 00:17:29] Error: Couldn't read from socket.
+[28-Jun-97 00:17:29] Ilona v1.4 closed.
+
+[08-Jul-97 15:25:43] Ilona v1.4 opened.
+[08-Jul-97 15:25:43] Looking for host irc.pi.net
+[08-Jul-97 15:27:49] Unknown host irc.pi.net
+[08-Jul-97 15:27:50] Ilona v1.4 closed.
+
+[27-Sep-97 13:28:28] Ilona v1.4 opened.
+[27-Sep-97 13:28:28] Looking for host irc.pi.net
+[27-Sep-97 13:28:29] Attempting connection to irc.pi.net (port 7000).
+[27-Sep-97 13:28:32] Connected! Sending handshake.
+[27-Sep-97 13:28:38] Welcome to the Internet Relay Network Ilona
+[27-Sep-97 13:28:38] Joining #AmigaCafe
+[27-Sep-97 13:30:22] ME bends down and is wary about Shitlips. ;) (from Mercenary)
+[27-Sep-97 13:30:44] CTCP PING 5202202 (from Mercenary)
+[27-Sep-97 13:31:17] Ilona v1.4 closed.
+
+[05-Oct-97 15:23:58] Ilona v1.4 opened.
+[05-Oct-97 15:23:58] Looking for host irc.pi.net
+[05-Oct-97 15:23:59] Attempting connection to irc.pi.net (port 7000).
+[05-Oct-97 15:23:59] Connected! Sending handshake.
+[05-Oct-97 15:24:05] Welcome to the Internet Relay Network Ilona
+[05-Oct-97 15:24:06] Joining #BritZone
+[05-Oct-97 15:37:40] SAY See? :) (from Mercenary)
+[05-Oct-97 15:37:40] CTCP PING 2992868 (from Mercenary)
+[05-Oct-97 15:37:56] Ilona v1.4 closed.
+
+[12-Oct-97 21:52:48] Ilona v1.4 opened.
+[12-Oct-97 21:52:48] Looking for host irc.pi.net
+[12-Oct-97 21:52:48] Attempting connection to irc.pi.net (port 7000).
+[12-Oct-97 21:52:51] Connected! Sending handshake.
+[12-Oct-97 21:52:53] Ilona v1.4 closed.
+
+[13-Apr-98 11:56:49] Ilona v1.3 opened.
+[13-Apr-98 11:56:50] Looking for host irc.pi.net
+[30-Jul-01 17:09:47] Ilona v1.4 opened.
+[30-Jul-01 17:09:47] Looking for host irc.pi.net
+[30-Jul-01 17:10:58] Unknown host irc.pi.net
+[30-Jul-01 17:10:58] Ilona v1.4 closed.
+

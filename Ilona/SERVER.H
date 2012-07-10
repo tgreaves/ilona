@@ -1,0 +1,38 @@
+
+ /***************************************************************************/
+ /*                               Ilona v1.2                                */
+ /*-------------------------------------------------------------------------*/
+ /*                  (c) Copyright 1997 by Tristan Greaves                  */
+ /*                           All rights reserved                           */
+ /*                                                                         */
+ /*    The material within is an unpublished copyrighted work containing    */
+ /*    trade secrets or otherwise sensitive information. This copy has      */
+ /*    been provided on the basis of strict confidentiality and on the      */
+ /*    express understanding that it may not be reproduced or revealed      */
+ /*    to any person, in whole or in part, without express written per-     */
+ /*    mission from Tristan Greaves, who is the sole owner of copyright     */
+ /*    and all other rights therein.                                        */
+ /*                                                                         */
+ /***************************************************************************/
+
+/* Header file for server.c */
+
+#ifndef SERVER_H
+
+#define SERVER_H
+
+/* Preliminary Stuff */
+
+void prepare_socket(void) ;
+void get_host_stuff( char input[] ) ;
+
+/* Server Communications */
+
+void SendToServer ( char *format, ...) ;
+int grab_server_line ( char output[] ) ;
+
+/* Connections */
+
+void do_connect(void) ;
+
+#endif /* SERVER_H */

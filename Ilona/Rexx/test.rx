@@ -1,0 +1,6 @@
+/* Ilona simple test script */
+
+address 'ILONA.1'
+
+get_channel
+

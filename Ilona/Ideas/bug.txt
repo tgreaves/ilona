@@ -1,0 +1,1192 @@
+
+Date: 28 Apr 97  01:59:19
+From: Yiannis Samios
+To:   Tristan Greaves
+Subj: Ilona....blues:))
+
+^DOMAIN fidonet 2:443/13.92 fidonet 2:999/99.0
+^INTL 2:443/13 2:999/99
+^TOPT 92
+^MSGID: 2:999/99.0 <yam7057.985.1747106368@mail.acropolis.gr>
+^REPLYADDR ssya@acropolis.net
+^PID: AmiGate 1.6 (13.11.95)
+^
+^X-Mailer: YAM 1.3.4 [040] - Amiga Mailer by Marcel Beck
+^Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY.7057.985.1747106368.2"
+^X-UIDL: 0e8942c58d88493df2a9b30a16283720
+^Status: RO
+^X-Status: 
+
+Warning: This is a message in MIME format. Your mail reader does not
+support MIME. Some parts of this message will be readable as plain text.
+To see the rest, you will need to upgrade your mail reader.
+
+This message was composed on an Amiga using the YAM mailer.
+YAM is available at http://bitcom.ch/~mbeck/
+
+--BOUNDARY.7057.985.1747106368.2
+Content-Type: text/plain
+
+Hi there merc..
+
+well here it comes:)
+it's my system status report when ilona tryed to connect to my irc-clhat
+server
+It does not give me any guru massages ..
+It just freezes while in the mui window says that  handshaking is going on..
+It shows as connected to the localhost but it does not respont tto anything
+(ping for example)
+When i have tried to connect to an undernet irc server it crasses and reboots
+I do not know if i have been any helpfull
+Waiting for some respond........
+
+Ps . as you see the only changes i have done to the config is the port number 
+and the channel..:)
+No other changes anywhere... and the stack:)
+
+--BOUNDARY.7057.985.1747106368.2
+Content-Type: text/plain; charset=iso-8859-1; name="ssya's_system_report1"
+Content-Transfer-Encoding: quoted-printable
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                     Description
+-------------------------------------------------------------------------=
+----
+$682ED2B8    AmIRC                    AmIRC IRC Client                   =
+     =
+
+$683A6640    AmIRC                    AmIRC IRC Client                   =
+     =
+
+$680FE0A0    Arq 1.83                 The Requester Improver             =
+     =
+
+$68166428    BlueEyes V2.2            follow the mouse                   =
+     =
+
+$6814E4D0    Clip Board Enhancer      Anthony J. Moringello              =
+     =
+
+$680EF920    Executive                Task scheduler/manager             =
+     =
+
+$68220EC8    FTPMount Status          Status and control of FTPMount     =
+     =
+
+$681F0C98    Ilona                    Advanced IRC Channel Management Sys=
+tem  =
+
+$6813AE68    Magic Menu               Improves the Intuition menus       =
+     =
+
+$68087A68    MCP                      The Ultimate System Enhancer !     =
+     =
+
+$681B8DB0    Miami                    Easy Internet access for Amiga     =
+     =
+
+$68130748    SwazInfo                 Enhanced workbench icon information=
+     =
+
+$680F26A8    TinyMeter V4.31          Shows system states                =
+     =
+
+$6822BA40    YAM                      SMTP/POP3 Client & Mailer for AmiTC=
+P    =
+
+
+14 commodities.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                                Version  Pri  Open Count=
+
+-------------------------------------------------------------------------=
+----
+$6800528C    gameport.device                     40.1     0     1     =
+
+$68005424    timer.device                        39.4     0     44    =
+
+$68005984    keyboard.device                     40.1     0     4     =
+
+$68005AFC    input.device                        40.1     0     14    =
+
+$68006ED8    ramdrive.device                     39.35    0     1     =
+
+$68006F5C    trackdisk.device                    40.1     0     3     =
+
+$6800702C    carddisk.device                     40.1     0     0     =
+
+$68007CA4    scsi.device                         40.12    0     4     =
+
+$6800A538    console.device                      40.2     0     2     =
+
+$680AC39C    clipboard.device                    38.8     0     4     =
+
+$681BF444    8n1.device                          37.34    0     1     =
+
+$682B3AD4    audio.device                        37.10    0     0     =
+
+
+12 devices.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                 Range   Open Y   X   Type
+-------------------------------------------------------------------------=
+----
+$680E25C2    couriergr.font     32-255  15   13  7   Disk, Designed      =
+     =
+
+$680E19CA    helveticagr.font   32-255  55   11  10  Disk, Prop., Designe=
+d    =
+
+$68113F82    Helveticagr.font   32-255  2    11  10  Disk, Prop., Designe=
+d    =
+
+$6811012A    helveticagr.font   32-255  5    13  10  Disk, Prop., Designe=
+d    =
+
+$680AC8C2    syagr.font         32-255  25   8   8   ROM, Designed       =
+     =
+
+$68005110    topaz.font         32-255  25   8   8   ROM, Designed       =
+     =
+
+$680050C0    topaz.font         32-255  2    9   10  ROM, Designed       =
+     =
+
+
+7 fonts.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                 Type  Pri   Code         Data
+-------------------------------------------------------------------------=
+----
+
+             Disk Block                                                =
+
+$68000582    disk.resource        Handl 0     $68000534    $68000534   =
+
+
+             CIA-A & INT2                                              =
+
+$6800567A    card.resource        Servr 127   $68005618    $68005618   =
+
+$6800027A    ciaa.resource        Servr 120   $68000250    $68000250   =
+
+$68007C68    AT-IDE               Servr 20    $68007C20    $68007C20   =
+
+$681C5F58    8n1.device           Servr 0     $681C5EE8    $681C5EE8   =
+
+
+             Vert Blank                                                =
+
+$68000ABE    graphics.library     Servr 10    $68000A74    $68000A74   =
+
+$680053C0    gameport.device      Servr 0     $6800528C    $6800528C   =
+
+$68005502    timer.device         Servr 0     $68005424    $68005424   =
+
+$68135410    PointerX 4.8         Servr 0     $6813542A    $6813542A   =
+
+$68083DBE    MCP                  Servr 0     $68087A68    $68087A68   =
+
+
+             Blitter                                                   =
+
+$68000AEA    graphics.library     Handl 0     $68000A74    $68000A74   =
+
+
+             Audio 0                                                   =
+
+$682B3BD0    audio.device         Handl 0     $682B3B9E    $682B3B9E   =
+
+
+             Audio 1                                                   =
+
+$682B3C3C    audio.device         Handl 0     $682B3C0A    $682B3C0A   =
+
+
+             Audio 2                                                   =
+
+$682B3CA8    audio.device         Handl 0     $682B3C76    $682B3C76   =
+
+
+             Audio 3                                                   =
+
+$682B3D14    audio.device         Handl 0     $682B3CE2    $682B3CE2   =
+
+
+             Disk Sync                                                 =
+
+$68000598    disk.resource        Handl 0     $68000534    $68000534   =
+
+
+             CIA-B & INT6                                              =
+
+$6800031A    ciab.resource        Servr 120   $680002F0    $680002F0   =
+
+$68005664    card.resource        Servr -127  $68005618    $68005618   =
+
+
+18 interrupt handlers/servers.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                                Version  Pri  Open Count=
+
+-------------------------------------------------------------------------=
+----
+$68000148    utility.library                     40.1     0     90    =
+
+$68000A74    graphics.library                    40.24    0     1     =
+
+$68005238    layers.library                      40.1     0     1     =
+
+$68006E08    keymap.library                      40.4     0     1     =
+
+$68008E2C    intuition.library                   40.85    0     1     =
+
+$6800B840    mathieeesingbas.library             40.4     0     2     =
+
+$6800CB9C    dos.library                         40.3     0     87    =
+
+$68031228    68060.library                       41.5     0     1     =
+
+$68030FF0    68040.library                       40.14    0     1     =
+
+$6806E258    gadtools.library                    40.4     0     20    =
+
+$6806E928    locale.library                      40.4     0     0     =
+
+$6806E0B8    reqtools.library                    38.1436  0     0     =
+
+$6806E35C    icon.library                        40.1     0     25    =
+
+$68098CA0    workbench.library                   40.5     0     15    =
+
+$6806EE80    diskfont.library                    39.3     0     0     =
+
+$6809956C    commodities.library                 40.2     0     0     =
+
+$68037438    mcpsupport.library                  2.3      0     1     =
+
+$68099818    iffparse.library                    40.1     0     16    =
+
+$680A4DA0    Garshnelib.library                  39.2     0     1     =
+
+$680AC4F4    mcpgfx.library                      2.4      0     1     =
+
+$680D27B8    screennotify.library                2.0      0     7     =
+
+$680B632C    notifyintuition.library             3.3      0     2     =
+
+$680D7EA0    datatypes.library                   45.1     0     15    =
+
+$680DCB38    mathieeedoubbas.library             40.6     0     2     =
+
+$680DC9DC    rexxsyslib.library                  36.23    0     12    =
+
+$680DCB88    8svx.datatype                       40.1     0     9     =
+
+$680DCC20    sound.datatype                      39.36    0     1     =
+
+$680F7604    wbstart.library                     2.2      0     1     =
+
+$680F7EF0    ilbm.datatype                       43.6     0     90    =
+
+$6810CD20    picture.datatype                    43.757   0     1     =
+
+$680FF7AC    asl.library                         42.0     0     0     =
+
+$68110EF8    cybergraphics.library               40.95    0     0     =
+
+$681014F0    SysInfo.library                     2.0      0     1     =
+
+$681157F8    cyberncg.library                    40.66    0     1     =
+
+$68123B48    tabs.gadget                         42.3     0     1     =
+
+$6814BF90    matrix.library                      25.3238  0     1     =
+
+$68139FB4    whatis.library                      4.0      0     1     =
+
+$68162DC0    mathieeedoubtrans.library           40.6     0     1     =
+
+$680BDACC    muimaster.library                   19.35    0     14    =
+
+$680BD274    muigfx.library                      19.9     0     10    =
+
+$680BDE30    muilowlevel.library                 19.9     0     12    =
+
+$680BC480    Virtgroup.mui                       19.10    0     1     =
+
+$681B1C38    Scrollgroup.mui                     19.8     0     1     =
+
+$681FFBC0    usergroup.library                   4.0      0     2     =
+
+$68200F60    bsdsocket.library                   4.1      0     9     =
+
+$68200FA0    miami.library                       6.0      0     0     =
+
+$68231EF0    kmel_knob2.image                    2.2      0     1     =
+
+$680ABC74    textfield.gadget                    3.1      0     1     =
+
+$680A3740    Listtree.mcc                        17.36    0     1     =
+
+$6825C080    Numericbutton.mui                   19.8     0     2     =
+
+$6825C218    Popasl.mui                          19.8     0     14    =
+
+$6827B9F8    Boopsi.mui                          19.8     0     1     =
+
+$68285C78    Floattext.mui                       19.8     0     1     =
+
+$6802FC50    Gauge.mui                           19.9     0     2     =
+
+$680AF088    Scale.mui                           19.8     0     1     =
+
+$680B7450    muirexx.library                     19.9     0     4     =
+
+$681CC6D8    muiwinborder.class                  19.9     0     3     =
+
+$680B5C68    muipropg.class                      19.9     0     6     =
+
+$681BF51C    powerpacker.library                 37.4     0     0     =
+
+$681BF568    Busy.mcc                            16.36    0     0     =
+
+$681C0678    bevel.image                         41.26    0     8     =
+
+$681C0618    layout.gadget                       42.37    0     2     =
+
+$681C07C0    drawlist.image                      42.2     0     2     =
+
+$681C059C    window.class                        42.59    0     1     =
+
+$681C1378    space.gadget                        41.2     0     1     =
+
+$681C1400    label.image                         41.0     0     1     =
+
+$681C2490    glyph.image                         41.3     0     4     =
+
+$681C2230    button.gadget                       41.6     0     1     =
+
+$681C7740    scroller.gadget                     41.47    0     1     =
+
+$681C276C    listbrowser.gadget                  41.291   0     1     =
+
+$681C7950    chooser.gadget                      41.11    0     1     =
+
+$681C7790    penmap.image                        41.8     0     1     =
+
+$681EE458    checkbox.gadget                     41.4     0     0     =
+
+$681EE7A0    string.gadget                       41.5     0     0     =
+
+$68300D0C    muiconfig.library                   19.20    0     0     =
+
+$681C2C68    muipop.library                      19.10    0     0     =
+
+$680C27B8    muiscreen.library                   19.12    0     0     =
+
+$681BF16C    asyncio.library                     38.0     0     0     =
+
+$00001674    expansion.library                   40.2     -20   5     =
+
+$000020F8    exec.library                        40.10    -100  3     =
+
+
+80 libraries.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Size     Free     Pri   Location     Name
+-------------------------------------------------------------------------=
+----
+$68000000    16384 Kb 9936 Kb  10    $68000020    << None >>          =
+
+$00001000    2044 Kb  1592 Kb  -10   $00001020    chip memory         =
+
+
+2 memory nodes.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                                Pri
+-------------------------------------------------------------------------=
+----
+$6802D34C    ramlib                              0    =
+
+
+1 memory handler installed.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                      Pri   Sig  Owner
+-------------------------------------------------------------------------=
+----
+$68033F30    ChatServer.cmd            5     31   CLI(19): AmiTCP:bin/
+$68030D30    SetMan                    0     31   PatchControl        =
+
+$68032538    MCP                       0     31   CLI(3): MCP         =
+
+$680DCA5C    REXX                      0     31   RexxMaster          =
+
+$680EF8C0    AREXX                     0     30   RexxMaster          =
+
+$680E4060    Executive_server          0     30   CLI(7): WBench_3.1:E
+$68123D58    MagicMenu                 0     27   MagicMenu           =
+
+$68151E28    CyberPatcher              0     0    << None >>          =
+
+$68151600    CBEREXX.1                 0     28   CBE                 =
+
+$68162B30    SWAZINFO                  0     30   SwazInfo            =
+
+$681B0FE8    TinyMeter                 0     26   CLI(8): Sys:MyPatche
+$6806E3C0    GarshneServer             0     29   CLI(3): MCP         =
+
+$6809F3B8    GarshneClient             0     31   CLI(4): WBench_3.1:B
+$681D7130    MIAMI.1                   0     27   CLI(13): comms:Miami
+$6820F878    6821ae18: FTPMount        0     31   FTP                 =
+
+$68211A20    AWS                       0     30   CLI(16): Aws:aws    =
+
+$680AF028    YAM                       0     25   CLI(17): Yam:Yam    =
+
+$681CA8F8    ILONA.1                   0     28   AmigaOS ChatServer v
+$68300D98    AMIRC.1                   0     27   AmIRC               =
+
+$683C68D0    AMIRC.3                   0     27   CLI(21): Comms:Acrop
+$680B60C8    ConClip.rendezvous        -1    31   =AB ConClip =BB        =
+ =
+
+$680E3D88    CenterTitles Port         -120  31   CLI(10): Sys:MyPatch
+$68031284    68060_PatchPort           -128  0    << None >>          =
+
+
+23 message ports.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name     Handler               Size     Used Label
+-------------------------------------------------------------------------=
+----
+$681FF56C    FTP:     FTPMountDir:L/FTPMoun                              =
+    =
+
+$68FFD9E0    TCP:     << None >>                                         =
+    =
+
+$680B0C3C    APIPE:   AmiTCP:l/APipe-Handle                              =
+    =
+
+$68087014    PRTPS:   L:prtpost-handler                                  =
+    =
+
+$68086FC4    PIPE:    L:Queue-Handler                                    =
+    =
+
+$68086F94    SPEAK:   L:Speak-Handler                                    =
+    =
+
+$68086F64    CON:     L:KingCON-handler                                  =
+    =
+
+$6806E40C    AUDIO:   L:AHI-Handler                                      =
+    =
+
+$6800BE6C    RAM:     << None >>                                         =
+    =
+
+$6800BDEC    RAW:     << None >>                                         =
+    =
+
+$6800BDAC    SER:     L:port-handler                                     =
+    =
+
+$6800BD6C    PAR:     L:port-handler                                     =
+    =
+
+$6800BD2C    PRT:     L:port-handler                                     =
+    =
+
+$68008A58    HD0:     << None >>            60 Mb    70%  WBench_3.1:    =
+    =
+
+$6800B9F8    DF0:     << None >>                          no disk        =
+    =
+
+$68007450    CC0:     << None >>                          no disk        =
+    =
+
+$6800B938    DF1:     << None >>                          no disk        =
+    =
+
+$6800B878    DF2:     << None >>                          no disk        =
+    =
+
+$68007D38    HD1:     << None >>            407 Mb   48%  Work:          =
+    =
+
+$68007E10    HD2:     << None >>            407 Mb   41%  Bussines:      =
+    =
+
+$68008568    HD3:     << None >>            407 Mb   72%  Comms:         =
+    =
+
+
+21 devices mounted
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                             Type         Pri   Version
+-------------------------------------------------------------------------=
+----
+$00F837B8    expansion.library                Library      110   40  =
+
+$00F800B6    exec.library                     Library      105   40  =
+
+$00F837D2    diag init                        Unknown      105   40  =
+
+$00FBD428    utility.library                  Library      103   40  =
+
+$00FC0008    potgo.resource                   Resource     100   37  =
+
+$00FBFA98    cia.resource                     Resource     80    39  =
+
+$00FC0140    FileSystem.resource              Resource     80    40  =
+
+$00FBDDE8    battclock.resource               Resource     70    39  =
+
+$00FBFE88    misc.resource                    Resource     70    37  =
+
+$00FC02E0    disk.resource                    Resource     70    37  =
+
+$00FFFDB0    battmem.resource                 Resource     69    39  =
+
+$00F851A8    graphics.library                 Library      65    40  =
+
+$00FB1E5C    layers.library                   Library      64    40  =
+
+$00FBA170    gameport.device                  Device       60    40  =
+
+$00FC0AC4    timer.device                     Device       50    39  =
+
+$00FBC844    card.resource                    Resource     48    40  =
+
+$00FBA19A    keyboard.device                  Device       45    40  =
+
+$00FBA1C4    input.device                     Device       40    40  =
+
+$00FC2754    keymap.library                   Library      40    40  =
+
+$00FBF4A4    ramdrive.device                  Device       25    39  =
+
+$00FC49E4    trackdisk.device                 Device       20    40  =
+
+$00FBE750    carddisk.device                  Device       15    40  =
+
+$00FB5040    scsi.device                      Device       10    40  =
+
+$00FCF498    intuition.library                Library      10    40  =
+
+$00FAE1D8    console.device                   Device       5     40  =
+
+$00FC18B4    mathieeesingbas.library          Library      0     40  =
+
+$00FC3414    syscheck                         Unknown      -35   40  =
+
+$00F84290    romboot                          Unknown      -40   40  =
+
+$00FC33D4    bootmenu                         Unknown      -50   40  =
+
+$00F83706    alert.hook                       Unknown      -55   40  =
+
+$00F842AA    strap                            Unknown      -60   40  =
+
+$00FA825E    filesystem                       Unknown      -81   40  =
+
+$00FBF080    ramlib                           Unknown      -100  40  =
+
+$00F9F2B8    dos.library                      Library      -120  40  =
+
+$00FBB7A4    audio.device                     Device       -120  37  =
+
+$00FBFF3A    workbench.task                   Task         -120  39  =
+
+$00FC0628    mathffp.library                  Library      -120  40  =
+
+$00FC66EC    icon.library                     Library      -120  40  =
+
+$00FE8E14    gadtools.library                 Library      -120  40  =
+
+$00FEE9C0    workbench.library                Library      -120  40  =
+
+$00FB79B2    con-handler                      Unknown      -121  40  =
+
+$00FCAFEC    shell                            Unknown      -122  40  =
+
+$00FC8B88    ram-handler                      Unknown      -123  39  =
+
+
+43 resident modules.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                                Version  Pri  Open Count=
+
+-------------------------------------------------------------------------=
+----
+$680001EC    potgo.resource                      37.0     0     0     =
+
+$68000250    ciaa.resource                       0.0      0     0     =
+
+$680002F0    ciab.resource                       0.0      0     0     =
+
+$68000378    FileSystem.resource                 ???      0     ???   =
+
+$6800046C    battclock.resource                  39.3     0     0     =
+
+$680004DC    misc.resource                       37.1     0     0     =
+
+$68000534    disk.resource                       37.2     0     0     =
+
+$680005E0    battmem.resource                    39.2     0     0     =
+
+$68005618    card.resource                       40.4     0     0     =
+
+$68006E2E    keymap.resource                     ???      0     ???   =
+
+$68031584    patch.resource                      2.1      0     0     =
+
+
+11 resources.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+ModeID       Name                                Resolution
+-------------------------------------------------------------------------=
+----
+$00021000    PAL:Low Res                         320 x 256      =
+
+$00029000    PAL:High Res                        640 x 256      =
+
+$00029020    PAL:Super-High Res                  1280 x 256     =
+
+$00021004    PAL:Low Res Laced                   320 x 512      =
+
+$00029004    PAL:High Res Laced                  640 x 512      =
+
+$00029024    PAL:Super-High Res Laced            1280 x 512     =
+
+$00079020    EURO:36Hz Super-High Res            1280 x 200     =
+
+$00079000    EURO:36Hz High Res                  640 x 200      =
+
+$00071000    EURO:36Hz Low Res                   320 x 200      =
+
+$00079024    EURO:36Hz Super-High Res Laced      1280 x 400     =
+
+$00079004    EURO:36Hz High Res Laced            640 x 400      =
+
+$00071004    EURO:36Hz Low Res Laced             320 x 400      =
+
+
+12 screen modes available.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Type   Address      Name                      Pos.         Size
+-------------------------------------------------------------------------=
+----
+
+Screen $681016A0    AmIRC 1.53 (29.03.97) =A9 1 (0 , 0)      (668 x 400) =
+
+Window $681E10B4    SysInspector 1.1          (34 , 30)    (492 x 195) =
+
+Window $683CF43C    [1] AMIRC.3 =B7 irc.hellas. (78 , 148)   (432 x 170) =
+
+Window $6832F0F4    [1] AMIRC.1 =B7 localhost/6 (112 , 94)   (537 x 306) =
+
+Window $681CC304    Ilona                     (531 , 56)   (137 x 61)  =
+
+Window $681AA5D4    << None >>                (67 , 4)     (560 x 51)  =
+
+Window $68162DF4    << None >>                (634 , 23)   (31 x 15)   =
+
+Window $6800DD94    << None >>                (0 , 0)      (668 x 400) =
+
+
+1 screen opened, with 7 windows.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                      Pri   Queue Owner
+-------------------------------------------------------------------------=
+----
+$68030EC4    PALIS_patch_list          104   -1    << None >>          =
+
+$68FBEA88    CLASSACT-PREFS            20    -1    << None >>          =
+
+$68140390    MagicMenu Patches         1     -1    << None >>          =
+
+$680B637E    notifyintuition.library   0     -1    << None >>          =
+
+$680B65B4    =AB notify_int Patches =BB    0     -1    << None >>        =
+  =
+
+$680D6B24    =AB IPrefs =BB                0     -1    << None >>        =
+  =
+
+$680FF994    =AB PCDT rendezvous =BB       0     -1    << None >>        =
+  =
+
+$68127150    SwazInfo                  0     -1    << None >>          =
+
+$68030C88    =AB SetPatch =BB              -127  -1    << None >>        =
+  =
+
+$680D14B8    Workbench                 -127  -1    << None >>          =
+
+
+10 semaphores.
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+-------------------------------------------------------------------------=
+----
+Expansion Boards
+-------------------------------------------------------------------------=
+----
+Blizzard 12x0 from Phase 5 Digital Products
+Type: Zorro-II  Address: $00EA0000  Size: 128k
+ =
+
+ =
+
+-------------------------------------------------------------------------=
+----
+Hardware
+-------------------------------------------------------------------------=
+----
+CPU:   68060     FPU: 060     VBR: $68051BB0
+Caches: Data (Burst)   Inst (Burst)   CopyBack
+ =
+
+Chipset: AGA     ChipRAM bus: 4x (32-bits, Double CAS)
+DMA Chip: 8374 - PAL Alice (rev. 3-4)
+Display Chip: Lisa ($F8)
+ =
+
+VBlank freq: 50Hz   PowerSupply Freq: 50Hz   EClock: 709379Hz
+ =
+
+-------------------------------------------------------------------------=
+----
+Software
+-------------------------------------------------------------------------=
+----
+AmigaOS: 40.68     SetPatch: 43.5   Workbench: 40.35
+Cybergraphics:  40.95
+ =
+
+-------------------------------------------------------------------------=
+----
+Vectors
+-------------------------------------------------------------------------=
+----
+Coldcapture: $00000000
+Coolcapture: $00000000
+Warmcapture: $00000000
+KickMemPtr: $001FE388 (1 entry)
+KickTagPtr: $00000000
+KickChecksum: $E3BFE415
+-------------------------------------------------------------------------=
+----
+
+
+
+SysInspector 1.1, =A91997 by Eric Sauvageau.
+
+Address      Name                                Pri  Type       State
+-------------------------------------------------------------------------=
+----
+$681ECF78    SysInspector                        -57  Process    Run     =
+  =
+
+$680058DC    card.resource                       15   Task       Wait    =
+  =
+
+$6800728C    carddisk.device                     5    Task       Wait    =
+  =
+
+$680341F0    CLI(2): C:AmigaIsp                  0    Process    Wait    =
+  =
+
+$6806F010    PatchControl                        0    Process    Wait    =
+  =
+
+$680E4120    =AB ConClip =BB                         0    Process    Wait=
+      =
+
+$680E51D8    CLI(6): C:MagicWB-Demon             4    Process    Wait    =
+  =
+
+$680F5930    CLI(9): Sys:MyPatches/CleverWin     0    Process    Wait    =
+  =
+
+$680F98F8    CLI(10): Sys:MyPatches/CenterTi     -53  Process    Wait    =
+  =
+
+$680FE0A0    CLI(11): Sys:MyPatches/Arq          -53  Process    Wait    =
+  =
+
+$6814E4D0    CBE                                 -53  Process    Wait    =
+  =
+
+$68130748    SwazInfo                            -53  Process    Wait    =
+  =
+
+$680D4D28    =AB IPrefs =BB                          -53  Process    Wait=
+      =
+
+$680E0018    Sound_Object_Handler                21   Process    Wait    =
+  =
+
+$680A2270    CLI(4): WBench_3.1:Blankers/Moi     -53  Process    Wait    =
+  =
+
+$680B9010    PRTPS                               5    Process    Wait    =
+  =
+
+$681D5140    muigfx.library                      -53  Process    Wait    =
+  =
+
+$68222970    CLI(16): Aws:aws                    -53  Process    Wait    =
+  =
+
+$681D8250    KingCON DOS-process                 5    Process    Wait    =
+  =
+
+$681D7168    CON                                 5    Process    Wait    =
+  =
+
+$68307208    Sound_Object_Handler                21   Process    Wait    =
+  =
+
+$683088D0    Sound_Object_Handler                21   Process    Wait    =
+  =
+
+$68319DF0    Sound_Object_Handler                21   Process    Wait    =
+  =
+
+$68309FF0    Sound_Object_Handler                21   Process    Wait    =
+  =
+
+$68236A00    CLI(19): AmiTCP:bin/CLChatServe     -53  Process    Wait    =
+  =
+
+$6822BA40    CLI(17): Yam:Yam                    -53  Process    Wait    =
+  =
+
+$683A53A8    Sound_Object_Handler                21   Process    Wait    =
+  =
+
+$683AA9E8    Sound_Object_Handler                21   Process    Wait    =
+  =
+
+$683C8A08    Sound_Object_Handler                21   Process    Wait    =
+  =
+
+$681F0C98    AmigaOS ChatServer v3.52 (06.02     -53  Process    Wait    =
+  =
+
+$683ABF00    Sound_Object_Handler                21   Process    Wait    =
+  =
+
+$6821C670    (FTPMount) TCP Handler              2    Process    Wait    =
+  =
+
+$68220EC8    (FTPMount) status handler           2    Process    Wait    =
+  =
+
+$681B8DB0    CLI(13): comms:Miami/miami          -53  Process    Wait    =
+  =
+
+$680EF030    RexxMaster                          4    Process    Wait    =
+  =
+
+$6800B700    console.device                      5    Task       Wait    =
+  =
+
+$6829E450    KingCON DOS-process                 5    Process    Wait    =
+  =
+
+$6829D368    CON                                 5    Process    Wait    =
+  =
+
+$6802E970    CLI(1): WBStart Handler             0    Process    Wait    =
+  =
+
+$6822E1E8    CLI(18): WWW server                 -53  Process    Wait    =
+  =
+
+$6813AE68    MagicMenu                           0    Process    Wait    =
+  =
+
+$680D3C28    notifyintuition.library             5    Process    Wait    =
+  =
+
+$68337BE0    CLI(14): CLChatIRCD 127.0.0.1 [     -53  Process    Wait    =
+  =
+
+$6821AE18    FTP                                 2    Process    Wait    =
+  =
+
+$6821F658    (FTPMount) local handler            2    Process    Wait    =
+  =
+
+$681F64B0    CLI(5): CLChatIRCD 127.0.0.1 [l     -53  Process    Wait    =
+  =
+
+$6811A050    CLI(12): Workbench                  1    Process    Wait    =
+  =
+
+$68071058    RAM                                 10   Process    Wait    =
+  =
+
+$682ED2B8    AmIRC                               -53  Process    Wait    =
+  =
+
+$68014388    DF0                                 10   Process    Wait    =
+  =
+
+$68348068    CC0                                 10   Process    Wait    =
+  =
+
+$68016850    DF1                                 10   Process    Wait    =
+  =
+
+$68019188    DF2                                 10   Process    Wait    =
+  =
+
+$68021AB0    HD2                                 10   Process    Wait    =
+  =
+
+$680279A8    HD3                                 10   Process    Wait    =
+  =
+
+$68018F14    trackdisk.device                    5    Task       Wait    =
+  =
+
+$6801B7D4    trackdisk.device                    5    Task       Wait    =
+  =
+
+$68212DF0    CLI(15): comms:Miami/miami          -53  Process    Wait    =
+  =
+
+$6800C0A4    trackdisk.device                    5    Task       Wait    =
+  =
+
+$680F26A8    CLI(8): Sys:MyPatches/TinyMeter     -53  Process    Wait    =
+  =
+
+$68207D60    Miami Airport                       5    Process    Wait    =
+  =
+
+$680EF920    CLI(7): WBench_3.1:Executive/Ex     126  Process    Wait    =
+  =
+
+$683A6640    CLI(21): Comms:Acropolis/AmIRC/     -50  Process    Wait    =
+  =
+
+$6800E368    HD0                                 10   Process    Wait    =
+  =
+
+$6802D568    ramlib                              -53  Process    Wait    =
+  =
+
+$68204910    Miami Downtown                      4    Process    Wait    =
+  =
+
+$680078E8    scsi.device                         11   Task       Wait    =
+  =
+
+$6801BA48    HD1                                 10   Process    Wait    =
+  =
+
+$68005B52    input.device                        20   Task       Wait    =
+  =
+
+$68087A68    CLI(3): MCP                         0    Process    Wait    =
+  =
+
+$68166428    BlueEyes                            -53  Process    Wait    =
+  =
+
+
+Total: 63 Tasks (0 ready), 8 Processes (0 ready).
+-------------------------------------------------------------------------=
+----
+
+
+
+
+
+
+
+--BOUNDARY.7057.985.1747106368.2
+Content-Type: text/plain; name="ilona.cfg"
+
+# Example Configuration File
+# --------------------------
+#
+# Please see the Ilona guide for more information.
+#
+# Lines beginning with # (like this one) are comments.
+# The actual options are set at the end of this file.
+#
+# Logging Settings
+# ----------------
+#
+# SYSTEM_LOG <logfile>        Supervisor log-file.  (Remove for no logging)
+# CHANNEL_LOG <logfile>       Channel log-file.     (Remove for no logging)
+#
+# LOG_ARCHIVE (0 or 1)        24 hr log archives? (0=No, 1=Yes)
+# LOG_STAMP (0,1,2)           Stamps? (0=No, 1=Time, 2=Date&Time)
+# LOG_STATS (0 or 1)          On archives, put stats? (0=No, 1=Yes)
+#   Note: If not archived, these stats are displayed on log-off.
+#
+# HTML_LOG (0 or 1)           Use HTML format output? (0=No, 1=Yes)
+# HTML_HEADER <filename>      HTML header file to use for log.
+# HTML_PROTECT (0 or 1)       Strip channel HTML codes? (0=No, 1=Yes)
+#
+# Supervisor Settings
+# -------------------
+#
+# USERFILE <file>             Filename for userfile.
+# COMMAND_FILE <file>         Where user commands are.
+# COMMAND_CHAR <character>    Character to preface commands in channel.
+#
+# Personalisation Settings
+# ------------------------
+#
+# USERNAME <user name>        User ID for bot.
+# REALNAME <real name>        Real name of bot. (Shown on /WHOIS)
+#
+# Connection Settings
+# -------------------
+#
+# SERVER <server name>        Specify server to connect to.
+# PORT <port number>          Specify port number (Default 6667).
+# SERVER_PASSWORD <password>  Password for server (not usually required).
+# MAX_CONNECTS <number>       How many times to attempt a connection.
+# NICK <nickname>             Bot nickname.
+# CHANNEL <channel name>      Channel to join.
+#
+# Preferences
+# -----------
+#
+# REJOIN_KICK (0 or 1)        Rejoin a channel when kicked? (0=No, 1=Yes)
+# INVISIBLE (0 or 1)          Make bot invisible? (0=No, 1=Yes)
+
+SYSTEM_LOG ilona.log          # Delete this line to disable system logs.
+CHANNEL_LOG channel.log       # Delete this line to disable channel logs.
+
+LOG_ARCHIVE 0
+LOG_STAMP 1
+LOG_STATS 0
+HTML_LOG 0
+HTML_HEADER cafeheader.html
+HTML_PROTECT 1
+
+COMMAND_FILE usercommands.cfg
+COMMAND_CHAR +
+
+USERNAME tmg296
+REALNAME The funky Ilona system!
+
+SERVER localhost
+
+PORT 6667
+MAX_CONNECTS 5
+NICK Ilona
+CHANNEL #MAIN
+
+REJOIN_KICK 1
+INVISIBLE 1
+
+
+
+--BOUNDARY.7057.985.1747106368.2--
+
+
+
+
+^Via 2:443/13.92@fidonet 21 Jun 97  13:50:43 (Mail Manager v1.22x/n #1505)
+
+
+

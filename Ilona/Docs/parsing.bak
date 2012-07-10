@@ -1,0 +1,538 @@
+
+ /***************************************************************************/
+ /*                 LogBot v1.1beta - Channel Logging Robot                 */
+ /*-------------------------------------------------------------------------*/
+ /*                  (c) Copyright 1997 by Tristan Greaves                  */
+ /*                           All rights reserved                           */
+ /*                                                                         */
+ /*    The material within is an unpublished copyrighted work containing    */
+ /*    trade secrets or otherwise sensitive information. This copy has      */
+ /*    been provided on the basis of strict confidentiality and on the      */
+ /*    express understanding that it may not be reproduced or revealed      */
+ /*    to any person, in whole or in part, without express written per-     */
+ /*    mission from Tristan Greaves, who is the sole owner of copyright     */
+ /*    and all other rights therein.                                        */
+ /*                                                                         */
+ /***************************************************************************/
+
+/* Parsing routines */
+/* Included from main.c */
+
+/* GetToken source by Logixs */
+char *GetToken(char **source, char *starttokens, char *endtokens)
+{
+   char *src, *tok=NULL;
+   int done=FALSE;
+   
+   src=*source;
+   while((*src) && (strchr(starttokens, *src)))
+      src++;
+   if(*src)
+   {
+      tok=src;
+      while(!done)
+      {
+         if(*src==0)
+            done=TRUE;
+         else if(strchr(endtokens, *src))
+         {
+            *src++='\0';
+            done=TRUE;
+         }
+         else
+            src++;
+      }
+      *source=src;
+   }
+   return(tok);
+}
+
+void GetNick (char *dest, char *nuh) {
+
+   if (strchr (nuh, '!') ) {
+
+      while ( *nuh != '!' ) {
+
+         *dest++ = *nuh++ ;
+
+      }
+
+      *dest = '\0' ;
+
+   }
+
+}
+
+int ConfirmID (char *from) {
+
+   char *suser, *temp ;
+
+   /* This needs to be changed. */
+   /* Ideally, it should return levels along the lines of: */
+
+   /* 0  --   "Normal" user. Command access:  help, showcommands */
+   /* 1  --   "Priv" user.   Command access:  log, say           */
+   /* 2  --   "God" user.    Command access:  quit               */
+
+   /* 1. SYSOP_USER */
+   /* Establish suser to contain UserName of person talking to us */
+
+   suser = strchr (from, '!') ;    /* Where the ! is */
+   suser++ ;
+
+   /* Compensate for IDENTD not working */
+
+   if (*suser == '~') {
+
+      suser++ ;
+
+   }
+
+   temp = strchr (suser, '@') ;    /* Find end of USER */
+   *temp='\0' ;                    /* Make that the end of string */
+
+   /* Now compare this with our configuration */
+
+   if (stricmp (suser, sysop_user) != 0 ) {
+
+      return 0 ;   /* ID failed at user name stage */
+ 
+   } else {
+
+      /* Do a search to see if domain name is present */
+
+      *temp='@' ; /* Reinstate string */
+ 
+      if ( strstr (suser, sysop_host) == 0 ) {
+
+         return 0 ;  /* ID failed at host name stage */
+
+      } else {
+
+         return 1 ;
+
+      }
+
+   }
+
+}
+
+void strip_bracks (char *text) {
+
+  /* Will remove HTML brackets codes */
+
+  if (html_protect == 1) {
+
+     /* The user wants this stripping to be done */
+
+     while ( *text != '\0' ) {
+
+        if ( *text == '<' ) {
+
+           *text = ' ' ;
+
+        }
+
+        if ( *text == '>' ) {
+
+           *text = ' ' ;
+
+        }
+
+        text++ ;
+
+     }
+
+  }
+
+}
+
+void parse_line ( char buffer[] ) {
+
+   char *bufptr, *command, *argument, *argument2, *from, fromnick [10] ;
+
+   int recognised ;
+
+   long date ;
+
+   bufptr = buffer ;
+
+   /* We have an unparsed single command as input to this routine */
+
+   if ( buffer[0] == ':' ) {
+
+      from = GetToken (&bufptr, ":", " " ) ;    /* From field */
+
+   }
+
+   command   = GetToken (&bufptr, " ", " ") ;   /* Command */
+   argument  = GetToken (&bufptr, " :", " ") ;  /* Argument */
+
+   if (strcmp ("001", command) == 0) {
+
+      /* It's the welcome message */
+      /* Let's log it nicely to file */
+
+      do_sys_log("%s", bufptr+1) ;
+
+      /* Well, let's issue the JOIN command */
+
+      do_sys_log("Joining %s", channel) ;
+
+      SendToServer("JOIN %s", channel) ;  /* This shouldn't fail. :-) */
+
+      connected = 1 ;
+      logging = 1 ;
+
+      /* If we're meant to be invisible, set that up */
+
+      if (invisible == 1) {
+
+         SendToServer("MODE %s +i", nickname) ;
+
+      }
+
+      if (html_log == 1) {
+
+         prepare_log(0) ;
+
+      }
+
+   } 
+
+   if (strcmp ("433", command) == 0) {
+
+      printf("Error: Nickname %s is already in use.\n", nickname) ;
+      do_sys_log("Error: Nickname %s is already in use.", nickname) ;
+
+      exit_nicely(100) ;
+
+   }
+
+   if (strcmp ("PING", command) ==0) {
+
+      /* Server ping command. We need to respond or be kicked */
+
+      SendToServer ("PONG :%s", argument) ;
+
+   }
+
+   if (strcmp ("JOIN", command) == 0) {
+
+      GetNick (fromnick, from) ;
+
+      if (html_log == 0) {
+
+         do_channel_log("%s joined the channel.", fromnick) ;
+
+      } else {
+
+         do_channel_log("<B><I>%s</I></B> joined the channel.<BR>", fromnick) ;
+
+      }
+
+      joins++ ;
+
+   }
+
+   if (strcmp ("PART", command) == 0) {
+
+      GetNick (fromnick, from) ;
+
+      if (html_log == 0) {
+
+         do_channel_log("%s left the channel.", fromnick) ;
+
+      } else {
+
+         do_channel_log("<B><I>%s</I></B> left the channel.<BR>", fromnick) ;
+
+      }
+
+      parts++ ;
+
+   }
+
+   if (strcmp ("QUIT", command) == 0) {
+
+      GetNick (fromnick, from) ;
+
+      if (html_log == 0) {
+
+          do_channel_log("%s left IRC.", fromnick) ;
+     
+      } else {
+
+          do_channel_log("<B><I>%s</I></B> left IRC.<BR>", fromnick) ;
+      }
+
+      parts++ ;
+
+   }
+
+   if (strcmp ("KICK", command) == 0) {
+
+      GetNick (fromnick, from) ;
+
+      argument2 = GetToken (&bufptr, " ", " ") ;   /* Who was kicked? */
+
+      if (stricmp (nickname, argument2) == 0) {
+
+         /* Hey, someone kicked us! */
+
+         do_sys_log("Kicked from %s by %s", channel, fromnick) ;
+
+         if ( rejoin_kick == 1) {
+
+            do_sys_log("Joining %s", channel) ;
+
+            SendToServer("JOIN %s", channel) ;
+
+         }
+
+      } else {
+
+         /* It was someone else that was kicked */
+         /* Put this in both log files */
+
+         do_sys_log("KICK: %s was kicked from %s by %s", argument2, channel, fromnick) ;
+
+         if (html_log == 0) {
+
+            do_channel_log("%s was kicked off by %s", argument2, fromnick) ;
+
+         } else {
+
+            do_channel_log("<B><I>%s</I></B> was kicked off by %s<BR>", argument2, fromnick) ;
+
+         }
+
+      }
+
+   }
+
+   if (strcmp ("PRIVMSG", command) == 0) {
+
+      GetNick (fromnick, from) ;  /* Only want nick, not host */
+
+      /* CTCP support - check to see if it is a CTCP */
+
+      bufptr++ ;        /* Skipping : character */
+
+      if (bufptr[0] == '\001') {
+
+         /* It is a CTCP message --- remove junk */
+
+         bufptr [strlen (bufptr)-1] = '\0' ;
+         bufptr++ ;          /* Cut garbage */
+
+         if ( strncmp ("ACTION", bufptr, 6) == 0 ) {
+
+            /* It's an ACTION... log to channel */
+
+            bufptr = bufptr + 7 ;    /* Will point at desc */
+
+            if (html_log == 0) {
+
+               do_channel_log("%s %s", fromnick, bufptr) ;
+
+            } else {
+
+               strip_bracks (bufptr) ;
+
+               do_channel_log("%s %s<BR>", fromnick, bufptr) ;
+
+            }
+
+         } else {
+
+            /* CTCP Reply Required */
+
+            if ( strncmp ("PING", bufptr, 4) == 0 ) {
+
+               /* It's a PING from someone... send reply */
+
+               SendToServer("NOTICE %s :\x01%s\x01", fromnick, bufptr) ;
+
+            }
+
+            if ( strncmp ("VERSION", bufptr, 7) == 0) {
+
+               SendToServer("NOTICE %s :\x01VERSION %s\x01", fromnick, LBVERS) ;
+
+            }
+
+            if ( strncmp ("TIME", bufptr, 4) == 0) {
+
+               date = time (NULL) ;
+
+               SendToServer("NOTICE %s :\x01TIME Local time is %s %s\x01", fromnick, DateToString(date), TimeToString(date) ) ;
+
+            }
+
+            do_sys_log("CTCP %s (from %s)", bufptr, fromnick) ;
+           
+         }
+
+
+      } else {
+
+         /* What sort of message? Channel / Private */
+
+         if (stricmp (argument, channel) == 0 ) {
+
+            /* Channel message, so log it */
+
+            if (html_log == 0) {
+
+               do_channel_log ("<%s> %s", fromnick, bufptr ) ;
+
+            } else {
+
+               strip_bracks (bufptr) ;
+
+               do_channel_log("<B><I>%s:</I></B> %s<BR>", fromnick, bufptr) ;
+
+            }
+
+            nomess++ ;
+
+            if (log_archive == 1) {
+
+               check_archive() ;
+
+            }
+
+         } else {
+
+            /* We're a client, so we assume that the private message is to us */
+
+            recognised = 0 ;
+
+            argument2 = GetToken (&bufptr, " ", " ") ; /* This will be our user's request */  
+
+            if ( *argument2 == '!' ) { argument2++ ; }  /* Prefix rubbish */
+
+            /* Help ? */
+
+            if (stricmp (argument2, "HELP") == 0 ) {
+
+               do_sys_log("HELP request from %s", fromnick) ;
+               SendToServer("NOTICE %s :%s", fromnick, LBVERS) ;
+               SendToServer("NOTICE %s :(Advanced Channel Logging System)", fromnick) ;
+               SendToServer("NOTICE %s :For a list of commands type showcommands", fromnick) ;
+               recognised=1 ;
+
+            }
+           
+            /* Check if it is a QUIT command (from anyone really) */
+
+            if (stricmp (argument2, "QUIT") == 0 ) {
+
+               if (ConfirmID (from) == 2) {
+
+                  do_sys_log ("QUIT command received from supervisor.") ;
+                  do_sys_log ("There were %i joins and %i parts.", joins, parts) ;
+                  do_sys_log ("There were %i public messages.", nomess) ;
+
+                  SendToServer("QUIT :Remote shutdown.") ;
+
+                  exit_nicely (0) ;
+
+               } else {
+
+                  SendToServer("NOTICE %s :You are not authorised to do that.", fromnick) ;
+                  do_sys_log("Warning: Illegal QUIT command from %s", fromnick) ;
+                  recognised = 1 ;
+
+               }
+
+            }
+
+            /* SAY command -- Supervisor command */
+
+            if (stricmp (argument2, "SAY") == 0) {
+
+               recognised = 1 ;
+
+               if (ConfirmID (from) == 1) {
+
+                  do_sys_log("SAY %s (from %s)", bufptr, fromnick) ;
+                  SendToServer("PRIVMSG %s :%s", channel, bufptr) ;
+                  
+               } else {
+
+                  do_sys_log("Warning: Illegal SAY (%s) command from %s", bufptr, fromnick) ;
+                  SendToServer("NOTICE %s :You are not authorised to do that.", fromnick) ;
+
+               }
+
+            }
+
+            if (stricmp (argument2, "LOG") == 0) {
+
+               recognised = 1 ;
+
+               if (ConfirmID (from) == 1) {
+
+                  if (stricmp (bufptr, "ON") == 0) {
+
+                     logging = 1 ;
+                     do_sys_log("Channel logging enabled by %s", fromnick) ;
+                     SendToServer("NOTICE %s :The channel is now being logged by %s", channel, nickname) ;
+
+                  } else {
+ 
+                     if (stricmp (bufptr, "OFF") == 0) {
+
+                        logging = 0 ;
+                        do_sys_log("Channel logging disabled by %s", fromnick) ;
+                        SendToServer("NOTICE %s :The channel is no longer being logged by %s", channel, nickname) ;
+
+                     } else {
+
+                        /* Obviously an invalid switch has been used */
+
+                        do_sys_log("Unknown LOG switch (%s) from %s", bufptr, fromnick) ;
+                        SendToServer("NOTICE %s :Unknown LOG switch. Use ON or OFF.", fromnick) ;
+
+                     }
+
+                  }
+
+               } else {
+
+                  do_sys_log("Warning: Illegal LOG (%s) command from %s", bufptr, fromnick) ;
+                  SendToServer("NOTICE %s :Ah, but only supervisor's have that facility.", fromnick) ;
+
+               }
+
+            }
+
+            if (recognised==0) {
+
+               /* Not a recognised command */
+
+               SendToServer("NOTICE %s :Unknown command (%s)", fromnick, argument2) ;
+               do_sys_log ("<%s> %s %s", fromnick, argument2, bufptr ) ;
+
+            }
+
+         }
+
+      }
+
+   }
+
+   if (strcmp ("ERROR", command) == 0) {
+
+      /* It's a SERVER error - log error and get out of there! */
+
+      printf("Server Error: %s\n", bufptr) ;
+      do_sys_log("Server Error: %s", bufptr) ;
+
+      exit_nicely (100) ;
+
+   }
+
+}

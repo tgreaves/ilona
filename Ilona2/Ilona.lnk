@@ -1,0 +1,4 @@
+FROM LIB:c.o "logging.o"+"main.o"+"config.o"+"bot.o"
+TO "Ilona"
+LIB LIB:sc.lib LIB:amiga.lib
+

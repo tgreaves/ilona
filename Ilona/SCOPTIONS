@@ -1,0 +1,9 @@
+DATA=FAR
+ANSI
+LINK
+STACKEXTEND
+MEMORYSIZE=HUGE
+INCLUDEDIR=work:programming/mui/developer/c/include
+INCLUDEDIR=netinclude:
+DEFINE AMIGA
+PROGRAMNAME=Ilona

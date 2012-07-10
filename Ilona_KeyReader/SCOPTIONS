@@ -1,0 +1,4 @@
+LINK
+INCLUDEDIR=work:programming/mui/developer/c/include/
+INCLUDEDIR=netinclude:
+PROGRAMNAME=Ilona_KR

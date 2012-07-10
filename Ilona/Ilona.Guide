@@ -1,0 +1,1351 @@
+@database Ilona.guide
+## HyperText guide for Ilona
+## (c) Copyright 1997 Tristan Greaves
+@width 77
+
+@Node Main "Ilona"
+  
+                                 ** @{b}Ilona@{ub} **
+       
+             Advanced Internet Relay Chat Channel Management System
+
+                                 @{u}Version 1.3@{uu}
+
+                 @{i}Designed and programmed by Tristan Greaves@{ui}
+
+****************************************************************************
+
+                          @{"       About Ilona       " Link About}
+                          @{"       Requirements      " Link Requirements}
+                          @{"   Upgrading from v1.2   " Link Upgrade_12}
+
+                          @{"      Configuration      " Link Config}
+                          @{"        User File        " Link Userfile_Desc}
+                          @{"  User Defined Commands  " Link User_Commands}
+                          @{"    Getting It Running   " Link Running}
+
+                          @{"         Commands        " Link Commands}
+                          @{"     ARexx Interface     " Link ARexx}
+
+                          @{"      Registration       " Link Registration}
+
+                          @{"         History         " Link History}
+                          @{"       Where Next?       " Link Where_Next}
+                          @{"     Acknowledgements    " Link Ack}
+                          @{"  Contacting The Author  " Link Contact}
+                 
+                          @{"      Distribution       " Link Dist}
+
+                       © Copyright 1997 Tristan Greaves
+
+****************************************************************************
+
+@EndNode
+
+@Node About "About Ilona"
+
+                                 About Ilona
+                                 ------------
+
+@{i}Ilona@{ui} is a stand-alone client which will connect to the Internet Relay
+Chat network.
+
+It is designed to help manage a channel on the network. It can give channel
+operator status to specified users when they join, and also grant users
+various levels of access to the "bot". Annoying users may be kicked/banned
+with ease.
+
+Most of the settings are configured from a single, easy to use, commented
+configuration file. Details on the users are stored in a separate file.
+
+There are three levels of users - ranging from NONE (no privileges), PRIV
+(some privileges) to GOD (total control). The higher the level, the more
+access to @{i}Ilona@{ui} the user has.
+
+The user file can be altered either locally (Using a text editor), or
+remotely across the IRC network! Adding and removing users is easy, as
+is setting their level, op status etc.
+
+The command-set of the system can be extended by the user, using the
+IlonaScript system. Commands, along with their syntax, level etc can be
+specified in a file. The commands are then treated by Ilona like any other.
+
+The system also has extensive channel logging facilities. Not only will
+it log the channel in its entirety, but such logs may be produced in HTML
+format. The appearance of the resulting document may be configured by the
+user.
+
+The logging system can be programmed to do automatic archiving every 24
+hours, to prevent a single log from getting excessively large.
+
+Simple statistics about the channel are generated, showing the number of
+joins, parts and messages that occur on the channel.
+
+@{i}Ilona@{ui} uses the @{i}Magic User Interface@{ui}. Therefore, its look on the
+Workbench may be configured to your taste.
+
+@{u}Disclaimer@{uu}
+
+No warranties are expressed nor implied by the author of this program.
+It is free after all! Use At Your Own Risk, as the author will not be liable
+for any damages that might arise because of the use of this product.
+
+@EndNode
+
+@Node Requirements "Requirements"
+
+                               Requirements
+                               ------------
+
+@{u}Kickstart:@{uu} In this release, @{i}Ilona@{ui} should run on anything
+from Kickstart 2.0 upwards.
+
+@{u}Memory:@{uu} Not much! As @{i}Ilona@{ui} is a stand-alone client, you
+shouldn't have any problems.
+
+@{u}TCP/IP Stack:@{uu} Ilona should function with any normal TCP/IP stack
+for the Amiga. It has been tested with both AmiTCP and Miami and it has
+worked fine with both. Note that the stack needs to be loaded before you run
+Ilona.
+
+@{u}MUI:@{uu} Ilona uses the Magic User Interface (MUI) for its interface.
+You need to have MUI installed (muimaster.library v11 or above) for it to
+run. MUI is available from the Aminet.
+
+@{u}Development System@{uu}
+
+@{i}Ilona@{ui} was developed using the following hardware:
+
+Amiga A1200 (KS 3.0, 2 Megs Chip, 20 Megs Fast)
+Blizzard 1230-II - 68030/50Mhz
+540 Mb IDE HD
+IDE Zip
+
+@EndNode
+
+@Node Upgrade_12 "Upgrading from Ilona v1.2"
+
+                     Upgrading from Ilona v1.2 -> v1.3
+                     ---------------------------------
+
+@{u}The Configuration File@{uu}
+
+@{i}Ilona@{ui} no longer has defaults for the CHANNEL_LOG and SYSTEM_LOG
+settings. So, if you want the logging to occur, you must specify these
+in the configuration file! If you don't specify a name, logging will not
+occur.
+
+@{u}The User File@{uu}
+
+The user file has changed format slightly with this release, and you will
+need to change your old one slightly before continuing.
+
+For now, simply add the word NOGREET to each line.
+
+For example, if your user file is currently:
+
+   mrflibble weirdo.org GOD OP
+   nobody useless.org PRIV NOOP
+
+You would change it to:
+
+   mrflibble weirdo.org GOD OP NOGREET
+   nobody useless.org PRIV NOOP NOGREET
+
+For information on the new features in this release, please see the
+@{"History", Link History} section.
+
+To see what this funny NOGREET thing is all about, refer to the @{"User File", link Userfile_Desc}
+section.
+
+@EndNode
+
+@Node Config "Configuring Ilona"
+
+                                Configuration
+                                -------------
+
+By default, @{i}Ilona@{ui} looks for a file called Ilona.cfg in the
+current directory.
+
+For an example, please see the Ilona.config file which is included with
+this release. It is a fully functioning example, with some documentation.
+
+Click below for more detailed descriptions of the options:
+
+@{u}Logging Settings@{uu}
+
+@{"SYSTEM_LOG" Link System_Log}    Supervisor log file.
+@{"CHANNEL_LOG" Link Channel_Log}   Channel log file.
+@{"LOG_ARCHIVE" Link Log_Archive}   Switch to set log archiving on/off.
+@{"LOG_STAMP" Link Log_Stamp}     Switch to set log date/time stamping on/off.
+@{"LOG_STATS" Link Log_Stats}     Switch to set statistic stamping on/off.
+@{"HTML_LOG" Link HTML_Log}      Switch to set HTML logging on/off.
+@{"HTML_HEADER" Link HTML_Header}   Filename for the HTML header.
+@{"HTML_PROTECT" Link HTML_Protect}  Switch to set HTML protection on/off.
+
+@{u}User Settings@{uu}
+
+@{"USERFILE" Link Userfile}      Filename for the user file.
+
+@{u}Control Settings@{uu}
+
+@{"CONTROL_CHAR" Link Control_Char}  Identifier for in-channel commands.
+@{"COMMAND_FILE" Link Command_File}  Filename for the user-defined command file.
+
+@{u}Personalisation Settings@{uu}
+
+@{"USERNAME" Link Username}      The bot's user-name on IRC.
+@{"REALNAME" Link Realname}      The bot's "real name" on IRC.
+
+@{u}Connection Settings@{uu}
+
+@{"SERVER" Link Server}           The IRC server to connect to.
+@{"PORT" Link Port}             The port number to use for the connection.
+@{"MAX_CONNECTS" Link Max_Connects}     Number of times to attempt a connection.
+@{"SERVER_PASSWORD" Link Server_Password}  Password to use (if any).
+@{"NICK" Link Nick}             The nickname for the bot to assume.
+@{"CHANNEL" Link Channel}          The channel for the bot to join.
+
+@{u}Miscellaneous Preferences@{uu}
+
+@{"REJOIN_KICK" Link Rejoin_Kick}      Whether @{i}Ilona@{ui} should rejoin a channel after being kicked.
+@{"INVISIBLE" Link Invisible}        Switch to set whether @{i}Ilona@{ui} is "invisible" or not.
+
+@EndNode
+
+@Node System_Log "SYSTEM_LOG"
+
+Option: @{b}SYSTEM_LOG <filename>@{ub}
+
+@{u}Description@{uu}
+
+Specifies the name of the supervisor's log file. This is where Ilona
+reports on server connections/disconnections, its usage by other IRC users
+and the like.
+
+@{u}Example@{uu}
+
+   @{b}SYSTEM_LOG supervisor.log@{ub}
+
+@EndNode
+
+@Node Channel_Log "CHANNEL_LOG"
+
+Option: @{b}CHANNEL_LOG <filename>@{ub}
+
+@{u}Description@{uu}
+
+Specifies the name of the channel log file. This is where Ilona will
+store its log of the channel.
+
+@{u}Examples@{uu}
+
+   @{b}CHANNEL_LOG channel.log@{ub}
+   @{b}CHANNEL_LOG channel.html@{ub}
+
+@EndNode
+
+@Node Log_Archive "LOG_ARCHIVE"
+
+Option: @{b}LOG_ARCHIVE <0 or 1>@{ub}
+
+@{u}Description@{uu}
+
+With some channels, a lot of text can be generated, which can make the
+log file unwieldly after a few days. On the test channel, #AmigaCafe, around
+500-600k could be generated in one day.
+
+If this switch is on, the log will be archived to a separate file at the
+stroke of Midnight. The name of the file will be the same as the channel
+log-file, but appended with the date.
+
+Once the file is archived, logging starts afresh.
+
+@{u}Example@{uu}
+
+   @{b}LOG_ARCHIVE 0@{ub}   @{i}Turns log archivation off.@{ui}
+   @{b}LOG_ARCHIVE 1@{ub}   @{i}Turns log archivation on.@{ui}
+
+@{i}See Also: @{"LOG_STATS" Link Log_Stats}
+
+@EndNode
+
+@Node Log_Stamp "LOG_STAMP"
+
+Option: @{b}LOG_STAMP <0, 1 or 2>@{ub}
+
+@{u}Description@{uu}
+
+If required, each line of text in the channel log can be stamped with
+the time, or the date and time combined.
+
+@{i}Output in mode 1 (Time stamp)@{ui}          [22:58:34] Hello!
+@{i}Output in mode 2 (Time/Date stamp}@{ui}     [22-Mar-97 22:58:34] Hello!
+
+@{u}Examples@{uu}
+
+   @{b}LOG_STAMP 2@{ub}
+
+@EndNode
+
+@Node Log_Stats "LOG_STATS"
+
+Option: @{b}LOG_STATS <0 or 1>@{ub}
+
+@{u}Description@{uu}
+
+{i}Ilona{ui} keeps track of the number of joins/parts/messages that occur
+in the channel. These are normally saved out to the supervisor log file
+when logging ends.
+
+However, if this option is set (as well as LOG_ARCHIVE), the statistics
+on a daily basis are saved out with each archived file.
+
+@{u}Examples@{uu}
+
+   @{b}LOG_STATS 0@{ub}    @{i}Turns statistic stamping off.@{ui}
+   @{b}LOG_STATS 1@{ub}    @{i}Turns statistic stamping on.@{ui}
+
+@{i}See Also: @{"LOG_ARCHIVE" Link Log_Archive} @{ui}
+
+@EndNode
+
+@Node HTML_Log "HTML_LOG"
+
+Option: @{b}HTML_LOG <0 or 1>@{ub}
+
+@{u}Description@{uu}
+
+One of the major features of @{i}Ilona@{ui} is its ability to output the
+channel log in HTML format, for immediate usage on the World Wide Web.
+
+For this mode to work, you must specify a header file with HTML_HEADER.
+
+@{u}Examples@{uu}
+
+   @{b}HTML_LOG 0@{ub}    @{i}Turns HTML logging off.@{ui}
+   @{b}HTML_LOG 1@{ub}    @{i}Turns HTML logging on.@{ui}
+
+@{i}See Also: @{"HTML_HEADER" Link HTML_Header}, @{"HTML_PROTECT" Link HTML_Protect} @{ui}
+
+@EndNode
+
+@Node HTML_Header "HTML_HEADER"
+
+Option: @{b}HTML_HEADER <Filename>@{ub}
+
+@{u}Description@{uu}
+
+If HTML logging has been enabled, the user must supply the HTML header file.
+This will be the first thing to go in the log.
+
+An example header could be:
+
+<HTML>
+<HEAD>
+<TITLE "This is my log">
+</HEAD>
+
+This is the simplest possible. It identifies the log as an HTML file, so
+that web browsers will be able to read it, and sets the title. A better
+example can be found in the distribution, called htmlheader.html.
+
+@{u}Example@{uu}
+
+   @{b}HTML_HEADER htmlheader.html@{ub}
+
+@{i}See Also: @{"HTML_LOG" Link HTML_Log}, @{"HTML_PROTECT" Link HTML_Protect} @{ui}
+
+@EndNode
+
+@Node HTML_Protect "HTML_PROTECT"
+
+Option: @{b}HTML_PROTECT <0 or 1>@{ub}
+
+@{u}Description@{uu}
+
+There is a potential security flaw if HTML logging is enabled. Users will
+be able to write HTML coding in their messages, to create their own links
+in the channel log!
+
+This can be prevented by enabling this option: It strips out any HTML codes
+that users use in the channel.
+
+@{u}Examples@{uu}
+
+   @{b}HTML_PROTECT 0@{ub}    @{i}Turns HTML Protection off.@{ui}
+   @{b}HTML_PROTECT 1@{ub}    @{i}Turns HTML Protection on.@{ui}
+
+@{i}See Also: @{"HTML_LOG" Link HTML_Log}, @{"HTML_HEADER" Link HTML_Header} @{ui}
+
+@EndNode
+
+@Node Userfile "USERFILE"
+
+Option: @{b}USERFILE <Filename>@{ub}
+
+@{u}Description@{uu}
+
+This specifies the filename of the "User-File". The User-File contains
+details on the users that have a higher access on Ilona, and so can use the
+privileged functions.
+
+@{u}Example@{uu}
+
+   @{b}USERFILE myuserfile@{ub}
+
+@{i}See Also: @{"User-File Description" Link Userfile_Desc} @{ui}
+
+@EndNode
+
+@Node Control_Char "CONTROL_CHAR"
+
+Option: @{b}CONTROL_CHAR <Character>@{ub}
+
+@{u}Description@{uu}
+
+Commands may be issued to @{i}Ilona@{ui} in the channel. Therefore, you must
+specify which character you want to precede these commands, so that @{i}Ilona@{ui}
+will recognise them.
+
+@{u}Example@{uu}
+
+   @{b}COMMAND_CHAR +@{ub}    @{i}So, +showcommands, +say will work in channel@{ui}
+
+@EndNode
+
+@Node Command_File "COMMAND_FILE"
+
+Option: @{b}COMMAND_FILE <Filename>@{ub}
+
+@{u}Description@{uu}
+
+The user can build their own set of commands for @{i}Ilona@{ui}, using the
+IlonaScript system. Click @{"here" Link User_Commands} for more details.
+
+This option sets the filename for the file where the commands have been
+defined. If it isn't set, @{i}Ilona@{ui} assumes that no user-defined commands
+are to be used.
+
+@{u}Example@{uu}
+
+   @{b}COMMAND_FILE usercommands.cfg@{ub}
+
+@EndNode
+
+@Node Username "USERNAME"
+
+Option: @{b}USERNAME <User name>@{ub}
+
+@{u}Description@{uu}
+
+This allows you to specify @{i}Ilona's@{ui} user name on IRC. Normally,
+this should be the same as the user-name that you use. Normally, this
+corresponds to your user ID with your Internet Provider.
+
+@{u}Example@{uu}
+
+   @{b}USERNAME jsmith@{ub}
+
+@{i}See Also: @{"REALNAME" Link Realname} @{ui}
+
+@EndNode
+
+@Node Realname "REALNAME"
+
+Option: @{b}REALNAME <Real name>@{ub}
+
+@{u}Description@{uu}
+
+This allows you to specify @{i}Ilona's@{ui} "real name" on IRC. This
+is the descriptive text that is displayed when someone does a /WHOIS
+on the system. You can set this to a name, or even a statement. The
+default is "Ilona Channel Logging System", for example.
+
+@{u}Example@{uu}
+
+   @{b}REALNAME A channel logging thing.@{ub}
+
+@{i}See Also: @{"USERNAME" Link Username} @{ui}
+
+@EndNode
+
+@Node Server "SERVER"
+
+Option: @{b}SERVER <IRC Server>@{ub}
+
+@{u}Description@{uu}
+
+You must always specify which IRC server @{i}Ilona@{ui} should attempt
+to connect to, and this setting allows you to do just that.
+
+@{u}Example@{uu}
+
+   @{b}SERVER london.uk.eu.undernet.org@{ub}
+
+@{i}See Also: @{"PORT" Link Port}, @{"SERVER_PASSWORD" Link Server_Password} @{ui}
+
+@EndNode
+
+@Node Port "PORT"
+
+Option: @{b}PORT <Port Number>@{ub}
+
+@{u}Description@{uu}
+
+You must specify the port number for @{i}Ilona@{ui} to connect to at
+the IRC server. Normally, this is 6667, which is considered the standard.
+
+@{u}Example@{uu}
+
+   @{b}PORT 6667@{ub}
+
+@{i}See Also: @{"SERVER" Link Server}, @{"SERVER_PASSWORD" Link Server_Password} @{ui}
+
+@EndNode
+
+@Node Max_Connects "MAX_CONNECTS"
+
+Option: @{b}MAX_CONNECTS <Number of times>@{ub}
+
+@{u}Description@{uu}
+
+It is possible that an IRC server will reject a connection attempt. The most
+likely reason is that the IRC server is "full", and so cannot handle any more
+connections.
+
+In the event of such an error, @{i}Ilona@{ui} will attempt to connect again.
+The same happens if a server error occurs while channel logging is in progress.
+
+By default, @{i}Ilona@{ui} will attempt to do this 3 times, before giving up
+and exiting. You can use this configuration option to alter this.
+
+@{u}Example@{uu}
+
+   @{b}MAX_CONNECTS 5@{ub}
+
+@EndNode
+
+@Node Server_Password "SERVER_PASSWORD"
+
+Option: @{b}SERVER_PASSWORD <Password>@{ub}
+
+@{u}Description@{uu}
+
+Some IRC servers require users to use a password to connect. Although this
+is rare, @{i}Ilona@{ui} supports it.
+
+@{u}Example@{uu}
+
+   @{b}SERVER_PASSWORD flibble@{ub}
+
+@{i}See Also: @{"SERVER" Link Server}, @{"PORT" Link Port} @{ui}
+
+@EndNode
+
+@Node Nick "NICK"
+
+Option: @{b}NICK <Nickname>@{ub}
+
+@{u}Description@{uu}
+
+This option lets you set the bot's nickname on IRC. There is a maximum of
+9 characters allowed, and avoid non-alphanumeric characters.
+
+@{u}Example@{uu}
+
+   @{b}NICK MrLoggy@{ub}
+
+@EndNode
+
+@Node Channel "CHANNEL"
+
+Option: @{b}CHANNEL <Channel name>@{ub}
+
+@{u}Description@{uu}
+
+Here you can specify the channel which @{i}Ilona@{ui} should join on
+connecting to the IRC server. As soon as it joins the channel, logging
+commences.
+
+@{u}Example@{uu}
+
+   @{b}CHANNEL #AmigaCafe@{ub}
+
+@EndNode
+
+@Node Rejoin_Kick "REJOIN_KICK"
+
+Option: @{b}REJOIN_KICK <0 or 1>@{ub}
+
+@{u}Description@{uu}
+
+This switch determines what @{i}Ilona@{ui} should do if it is kicked
+from a channel by a channel operator. If set on, it will attempt to re-join
+the channel immediately. Otherwise, it will stay "in limbo" until told
+otherwise.
+
+@{u}Examples@{uu}
+
+   @{b}REJOIN_KICK 0@{ub}    @{i}Will not attempt to re-join@{ui}
+   @{b}REJOIN_KICK 1@{ub}    @{i}Will attempt to re-join@{ui}
+
+@EndNode
+
+@Node Invisible "INVISIBLE"
+
+Option: @{b}INVISIBLE <0 or 1>@{ub}
+
+@{u}Description@{uu}
+
+If required, @{i}Ilona@{ui} can be made "invisible" on IRC. This will
+mean that other IRC users will only be able to detect it if they are in
+the same channel. This will prevent "spammed" messages appearing in the
+log files.
+
+@{u}Examples@{uu}
+
+   @{b}INVISIBLE 0@{ub}    @{i}Bot will be visible.@{ui}
+   @{b}INVISIBLE 1@{ub}    @{i}Bot will be invisible.@{ui}
+
+@EndNode
+
+@Node Userfile_Desc "Ilona User File"
+
+                              The User File
+                              -------------
+
+The user file allows you to specify which users should be recognised by
+@{i}Ilona@{ui} for privileged command access, and for channel operator
+status.
+
+All users have access to a basic set of commands, but they are not allowed
+to affect @{i}Ilona's@{ui} operation in any way.
+
+@{b}Note:@{ub} @{i}Ilona@{ui} does not recognise users by their IRC nickname. Instead,
+it uses their User ID and host. This allows a user to use multiple
+nicknames, but still be recognised. Bear this in mind when using the user
+commands.
+
+Three are three sorts of user level:
+
+   GOD    -    Complete control. Can order @{i}Ilona@{ui} to QUIT etc.
+   PRIV   -    Basic privilege. Can do various "housekeeping" tasks.
+   NONE   -    Normal control. Same access as other users.
+
+Each user can also be given an "OP Status". There are two sorts:
+
+   OP     -    User will be "opped" when joining the channel.
+               User can request "op" status at any time with the OP command.
+
+   NOOP   -    User can not be given channel operator status.
+
+(The "NONE" user level is used if you want to have a user to be given
+channel operator status, but not to have any extra control over @{i}Ilona@{ui} )
+
+Also, remember that @{i}Ilona@{ui} will not be able to give another use
+Channel Operator status unless it has Channel Operator status itself!
+
+An example user-file is included in the distribution, called @{i}userfile@{ui}.
+It is relatively straightforward.
+
+Each line in the file should be along the lines of:
+
+<USER ID> <HOST NAME> <LEVEL> <OP STATUS> <GREETING>
+
+So, some example lines:
+
+jsmith megaprovider.net GOD OP Welcome Mr. God bloke!
+redfox super.com PRIV OP NOGREET
+nobody useless.org NONE NOOP Hey! You're nobody! :)
+
+@{b}Note:@{ub} @{i}Ilona@{ui} @{b}does@{ub} support host masking. In fact, it does it
+automatically, with no need for wild cards. Take "redfox" in the example
+above. They would be recognised even if they connected from:
+
+   ppp232.useless.org   or  a.weird.port.thing.useless.org
+
+@{u}GREETING@{uu}
+As can be seen, the last field allows you to specify a "greeting" for that
+user. If this is set, the specified message will be sent to the channel
+by @{i}Ilona@{ui} whenever that user joins. Note: This can be considered
+bad IRC etiquette, so use with care!
+
+Set this to NOGREET if you don't want @{i}Ilona@{ui} to greet that user.
+
+For descriptions of the various @{i}Ilona@{ui} commands, along with their
+required level, see @{"Commands" Link Commands}.
+
+@EndNode
+
+@Node User_Commands "User Defined Commands"
+
+                           User Defined Commands
+                           ---------------------
+
+@{i}Ilona@{ui} has a simple little language which I have called @{i}IlonaScript@{ui}
+built in. This allows the user to create their own simple commands!
+
+To start with, you need to tell @{i}Ilona@{ui} that you want to do this,
+using the @{"COMMAND_FILE" Link Command_File} configuration option.
+
+Then it is just a simple matter of creating the commands.
+
+Each line in the command file should look as follows:
+
+  <COMMAND NAME> <LEVEL> <TYPE> <NEXT>
+
+@{b}<COMMAND NAME>@{ub} - The name of the command, which will be used
+to activate it.
+
+@{b}<LEVEL>@{ub} - The level that a user needs to be to be able to use the
+command. The choices are:
+
+     @{i}ANY@{ui}  - Any user on IRC can use it.
+     @{i}NONE@{ui} - User must be in the user-file.
+     @{i}PRIV@{ui} - User must have PRIV set for their level.
+     @{i}GOD@{ui}  - User must have GOD set for their level.
+
+@{b}<TYPE>@{ub} - The type of command. This specifies the basic action of the
+command, and there are several choices:
+
+     @{i}KICK@{ui} - Will kick whoever is specified (see later).
+     @{i}ME@{ui}   - Makes the bot do an action.
+     @{i}SAY@{ui}  - Makes the bot say something.
+
+@{b}<TEXT>@{ub} - The text which will be displayed along with the action.
+You can put the word $arg in, and $arg will be replaced with the word that
+follows the command, when it is called. (If no argument is specified, it
+defaults to who @{i}issued@{ui} the command.
+
+@{u}Examples@{uu}
+
+The following examples should clear everything up...
+
+TROUT ANY ME slaps $arg with a monster trout!
+DANCE ANY ME dances around a bit.
+PC NONE SAY PC? Errrrrrgh, I feel sick $arg, don't say that again!
+GODSAY GOD SAY Aha, I only say this when a God user tells me to. :)
+WAREZ PRIV KICK Ergh! No way $arg, get out of here!
+DISMISS PRIV KICK I hereby dismiss $arg from the channel.
+
+To demonstrate the use of $arg, the DISMISS command above would be
+triggered by something like:
+
+  @{b}+DISMISS sadbloke@{ub}
+
+sadbloke would be kicked from the channel, with the reason:
+
+Please note that user-defined commands will not appear when a @{i}showcommands@{ui}
+command is issued. This is to prevent clutter, as the user-defined commands
+are essentially duplicating the functionality of the inbuilt commands
+anyway.
+
+"I hereby dismiss sadbloke from the channel."
+
+@EndNode
+
+@Node Running "Getting Ilona Running"
+
+                          Getting Ilona Running
+                          ----------------------
+
+First of all, you must have a TCP/IP stack, such as AmiTCP or Miami
+running. If you try running @{i}Ilona@{ui} without starting one, it
+will complain and exit with an error message.
+
+@{u}From Workbench@{uu}
+
+Simply double click on the icon! The default @{i}Ilona.config@{ui} file will
+be loaded.
+
+@{u}From the CLI@{uu}
+
+Once in the @{i}Ilona@{ui} directory type:
+
+   @{b}Ilona@{ub}
+
+The default configuration file is @{i}Ilona.config@{ui}. However, you
+may specify a different one by typing something like:
+
+   @{b}Ilona anotherconfig.file@{ub}
+
+@{u}Then...@{uu}
+
+The first thing @{i}Ilona@{ui} does is to load in the configuration, and
+check it. If there are any errors, such as a missing setting, it will
+be reported, and the program will exit cleanly.
+
+If all goes well, @{i}Ilona@{ui} will attempt to connect to your
+specified IRC server. Messages will appear to let you know what is
+happening. If there are any problems, the program will exit with an
+appropriate error message.
+
+Remember, full supervisor information is datestamped and reported in the
+supervisor log-file. If you are having problems, read it to see what
+is happening!
+
+@{u}Window Manipulation@{uu}
+
+The program window can be manipulated as with any other MUI application.
+For example, you can re-size it, iconify/de-iconify it, get it to open
+on a public screen etc. Please refer to the MUI documentation for more
+details.
+
+@{u}Killing It@{uu}
+
+There are several ways that you can kill @{i}Ilona@{ui}.
+
+From Workbench, simply click on the @{b}QUIT@{ub} gadget. You can also
+shut it down using the usual Commodity killing methods.
+
+If started from the CLI, hit CTRL+C in its shell window, or use the BREAK
+command. See your AmigaDOS manual for more details.
+
+@EndNode
+
+@Node Commands "Ilona Commands"
+
+                              Ilona Commands
+                              ---------------
+
+Commands can be issued to @{i}Ilona@{ui} in two different ways.
+
+@{u}1. In The Channel@{uu}
+
+Simply enter the command as normal, preceded with your specified
+control character. (See @{"COMMAND_CHAR" Link Control_Char})
+
+For example:
+
+   @{b}+showcommands@{ub}  @{i}If command character was +@{ui}
+
+@{u}2. In Private Messages@{uu}
+
+Simply address the bot with a normal private message, such as:
+
+   @{b}/MSG Ilona HELP@{ub}
+
+The following commands are supported at this time:
+
+@{u}Normal Level Commands@{uu}
+
+The following commands may be used by all on IRC.
+
+@{b}HELP@{ub}          Displays general help about using @{i}Ilona@{ui}
+@{b}SHOWCOMMANDS@{ub}  Displays all the commands available to the user.
+@{b}STATUS@{ub}        Displays whether channel logging is in progress.
+
+@{u}Privileged Level Commands@{uu}
+
+The following commands may only be used by those who have been set as
+PRIV (or above) in the @{"User File" Link Userfile_Desc}.
+
+@{b}BAN <Mask>@{ub}
+This will ban the <Mask> specified from the channel. There are various
+masks that you can try:
+
+   mrflibble@port-117-dodgy.com     Will only ban them from that port.
+   mrflibble@*.dodgy.com            Will ban them from that ISP.
+   *!*@*.dodgy.com                  Bans everyone from that ISP!
+
+I might implement a system in the future that simply allows you to
+specify their nickname. Feedback on this would be appreciated.
+
+@{b}KICK <Nickname> <Reason>@{ub}
+Kicks the specified user (Note that their nickname is used) from the
+channel. The <Reason> part is optional. This command will only work
+if the bot has been granted Channel Operator status.
+
+@{b}LOG <ON/OFF>@{ub}
+Turns logging on/off. Channel is informed.
+
+@{b}ME <Action>@{ub}
+Makes the bot do an action in the channel. For example, @{b}ME claps@{ub} would
+appear in the channel as: @{b}Ilona Claps@{ub}. This obviously depends on the
+name of the bot at the time.
+
+@{b}SAY <text>@{ub}
+Makes the bot say something to the channel.
+
+@{b}TOPIC <text>@{ub}
+@{i}Ilona@{ui} will set the topic of the channel to whatever is specified.
+
+@{b}UNBAN <Mask>@{ub}
+Removes the ban of <Mask> from the channel. See the @{b}BAN@{ub} command
+for more details on "Masks".
+
+@{u}God Level Commands@{uu}
+
+The following commands may only be used by those who have been set as
+GOD in the @{"User File" Link Userfile_Desc}.
+
+@{b}ADDUSER <User ID> <Host>@{ub}
+Adds a user to the user file. For a description of the <User ID> and
+<Host> fields, please see the @{"User File", Link Userfile_Desc} section.
+
+@{b}JOIN <Channel>@{ub}
+Makes @{i}Ilona@{ui} join the specified channel. Note: At present, Ilona
+may only be in one channel at a time (or the logs would get confused).
+Therefore, if you issue this command while the bot is still in a channel,
+it will leave the original channel first.
+
+@{b}LEAVE@{ub}
+Makes @{i}Ilona@{ui} leave the current channel.
+
+@{b}LOADUSERS@{ub}
+Re-load the user file from disk.
+
+@{b}RAW <text>@{ub}
+This will make @{i}Ilona@{ui} send the specified text directly to the
+IRC server. As a consequence, you can make @{i}Ilona@{ui} do any command which
+may not have been implemented yet. You will need some experience of the IRC
+protocol though. Some examples:
+
+  @{b}/msg Ilona RAW MODE #AmigaCafe +oo MrCheese Doodaah@{ub}
+  (This will give channel operator status to MrCheese and Doodaah).
+
+  @{b}/msg Ilona RAW PRIVMSG Wibble :Hey dude, how ya doing?@{ub}
+  (Sends the specified message privately to Wibble).
+
+Of course, I hope to implement the above as features in @{i}Ilona@{ui} anyway,
+so eventually this command will be pretty much obselete.
+
+@{b}REMUSER <User ID>@{ub}
+Removes the user from the database. @{b}Be careful!@{ub} If you remove
+yourself from the database remotely, you will lose your access!
+
+@{b}SAVEUSERS@{ub}
+Save the user file to disk. Note: This command is basically obsolete, as
+the user file is automatically saved whenever changes are made.
+
+@{b}SETGREET <User ID> <Greeting>@{ub}
+This command sets the GREET status of <User ID>. The message you
+specify will be said to the channel by @{i}Ilona@{ui} whenever the user
+joins. Note that this can be considered bad IRC etiquette, so use with
+care. :) Set the greeting to NOGREET to disable the greeting. For more
+information, please see the @{"User File", Link Userfile_Desc} section.
+
+@{b}SETOP <User ID> <Op Status>@{ub}   
+This command sets the OP/NOOP status of <User ID> accordingly. For more
+details, please see the @{"User File", Link Userfile_Desc} section.
+
+@{b}SETPRIV <User ID> <Priv>@{ub}
+Allows you to set the "Privilege" level of <User ID>. There are three
+possible settings: NONE, PRIV and GOD. For more details, please see
+the @{"User File", Link Userfile_Desc} section.
+
+@{b}QUIT@{ub}
+Makes the bot leave IRC. Program shuts down.
+
+@{b}VIEWUSER <User ID>@{ub}
+Shows the information that is stored about that User ID in the user file.
+
+@{u}OP Commands@{uu}
+
+The following command may only be used by those who have the OP flag
+set in the user-file.
+
+@{b}OP@{ub}            Requests channel operator status.
+
+@EndNode
+
+@Node ARexx "Ilona's ARexx Port"
+
+                               ARexx Commands
+                               ==============
+
+@{i}Ilona@{ui} has an ARexx port, so writing scripts to control it should be
+quite easy.
+
+The port-name is ILONA.x. The (x) depends on how many copies of Ilona are
+running. For example:
+
+  The first copy of @{i}Ilona@{ui} running would have the port:    ILONA.1
+  The second copy of @{i}Ilona@{ui} running would have the port:   ILONA.2
+
+           ... and so on.
+
+There are two sets of ARexx commands:
+
+@{"MUI's ARexx Commands", Link MUI_Rexx}    Application Control: QUIT, HIDE, SHOW, INFO, HELP
+@{"Ilona's ARexx Commands", Link Ilona_Rexx}  Commands to control Ilona.
+
+@EndNode
+
+@Node MUI_Rexx "The MUI ARexx Commands"
+
+                            The MUI ARexx Commands
+                            ======================
+
+   Every MUI application is able to receive commands via the built-in
+ARexx port. Here are some default commands which are understood by
+every program:
+
+   - QUIT
+
+     Ends the application.
+
+   - HIDE
+
+     Hides (iconifies) the application
+
+   - SHOW
+
+     Shows (pops up) an iconified application.
+
+   - INFO ITEM/A
+
+     According to the given parameter the result string is filled with
+     the following contents:
+
+        - "title"       Title of the application
+
+        - "author"      Author of the  application
+
+        - "copyright"   Copyright message
+
+        - "description" Short description
+
+        - "version"     Version string
+
+        - "base"        Name of the ARexx port
+
+        - "screen"      Name of the public screen
+
+   - HELP FILE/A
+
+     A list of all ARexx commands available for the application is
+     written into the given file. In addition to the default commands an
+     MUI application can (and of course should) support many application
+     specific commands. The help list will contain these commands as
+     well.
+
+   In case of an error, MUI returns the following values to the rexx
+script:
+
+   - -1
+
+     Wrong command definition in host program. Should never happen.
+
+   - -2
+
+     Out of memory.
+
+   - -3
+
+     Unknown ARexx command.
+
+   - -4
+
+     Syntax error.
+
+@EndNode
+
+@Node Ilona_Rexx "Ilona's ARexx Commands"
+
+                          Ilona's ARexx Commands
+                          ----------------------
+
+At the moment, Ilona does not have any of its own ARexx commands. However,
+these are now under development, and should feature in the next release.
+
+@EndNode
+
+@Node Registration "Registration"
+
+                               Registration
+                               ------------
+
+@{i}Ilona@{ui} is currently on release as "mail-ware".
+
+@{u}Restrictions@{uu}
+
+This version of @{i}Ilona@{ui} is restricted, as you may only have a
+maximum of three users in your user file. In all other respects, the
+program is fully operational.
+
+@{u}Registration@{uu}
+
+However, don't panic! At the moment, registering @{i}Ilona@{ui} is completely
+free! It is only restricted as I want to keep track of the number of people
+that are using the software.
+
+To register, you simply need to fill out the registration text file
+(Including in the distribution), and send it to me via e-mail. In return,
+you will receive a keyfile to "unlock" your coy of @{i}Ilona@{ui}.
+
+Please see the file @{i}Ilona.Registration@{ui} for more details.
+
+@{u}The Shareware Future@{uu}
+
+At some point in the future, @{i}Ilona@{ui} is going to become Shareware. At
+this point, the keyfile system will change, and there will be a small fee to
+obtain an updated keyfile.
+
+Why? Well, I've spent a lot of time on this project, and being a poor
+student etc, it would be nice to get some money. :)
+
+The registration fee is likely to be £10 UKP/$15 USD.
+
+Feel free to pay in advance! :) If you do, you will receive a new keyfile
+as soon as the Shareware version is released. Not only that, but you will
+have done a good deed. :)
+
+For details on payment details, please contact me, and we will work
+something out.
+
+@EndNode
+
+@Node History "History"
+
+                                History
+                                -------
+
+V1.2 - 12th April 1997
+----------------------
+
+First public release.
+
+V1.3 - 24th April 1997
+----------------------
+
+Notice: The user-file format has changed with this release, with the addition
+of another field (for auto-greets). Please see the @{"Upgrade" Link Upgrade_12} information.
+
+* Bug: If HTML logging was enabled, Ilona would guru nastily if the
+  specified HTML_HEADER file didn't exist. (Fixed)
+
+* Bug: REALNAME (in configuration file) could only cope with one word
+  entries! (Fixed)
+
+* Bug: SETPRIV didn't show up in the SHOWCOMMANDS list. (Fixed)
+
+* Bug: Under Linux, user validation failed due to a pointer error. Although
+  this didn't effect the Amiga version in an obvious way, it wasn't good
+  coding. (Fixed)
+
+* Default system/channel log names are no longer used. This allows user
+  to disable logging by simply deleting the SYSTEM_LOG and/or CHANNEL_LOG
+  lines in the configuraton file.
+
+* Commands may now be issued in the channel, with a user-defined prefix.
+  For example, +showcommands.
+
+* User definable commands, courtesy of IlonaScript. :) This is an optional
+  file, containing a list of commands and their syntax. 
+
+* Annoying autogreets! =) For each user in the user-file, you can now specify
+  a greet which will be sent when they join the channel. Optional, of course!
+
+* Added Command Support: LOADCOMMANDS  (Re-load user-defined commands).
+                         ME       (Allows bot to do actions in the channel).
+                         RAW      (To send raw data to the IRC server).
+                         SETGREET (To set @{i}Ilona's@{ui} autogreets).
+                         TOPIC    (To change the channel's topic).
+
+* Added Configuration Options: COMMAND_CHAR (Character to precede commands)
+                               COMMAND_FILE (Name of user defined command file).
+
+* CTCP Support: @{i}Ilona's@{ui} CTCP responses were altered to follow the CTCP
+  standards. This included adding two new CTCP commands: CLIENTINFO and
+  FINGER.
+
+* CTCP VERSION no longer reveals the registered user's real name: Just the
+  registration code. This allows the user to remain anonymous, if they so wish.
+
+* Documentation changed to point out that @{i}Ilona@{ui} DOES support host
+  masking! Some users had asked about this. It is done automatically, without
+  wildcards being required. Please see the @{"User File", Link Userfile_Desc} section.
+
+* Documentation changed to reflect the existance of @{i}Ilona's@{ui} ARexx port.
+
+@EndNode
+
+@Node Where_Next "Where Next?"
+
+                               Where Next?
+                               -----------
+
+Well, we're getting there now. This is mainly a bug-fix release, and for
+me to implement a few features that some users had asked for. The user
+definable commands system (IlonaScript) was added on a whim, but I'm glad
+it has turned out quite well. Some people have certainly been inspired by it.
+(See the Submissions directory). :)
+
+IlonaScript will be developed further in future releases to be more powerful,
+so please be patient with it.
+
+This release was delayed slightly as my Blizzard accelerator decided to
+die recently. After a lot of fretting, I replaced the oscillator and now
+everything is fine. It is actually running more than twice as fast as before!
+I have realised that the old oscillator has been damaged for ages, and had only
+been clocking my 50Mhz CPU at around 16Mhz! :-/
+
+I would like to thank all those that took the time to register, and for
+your comments. They are all very much appreciated. Keep it up! :-)
+
+Preliminary DCC support is underway, which will allow @{i}Ilona@{ui} to act
+as a file-server. Users will be able to DCC Chat the bot, and use commands
+such as "cd", "dir" and "get" within the chat to manipulate the files.
+The basic DCC handling code is in place, which will allow multiple,
+multi-tasking connections. Look out for this soon.
+
+A decent ARexx port should also feature, to give the hell-bent scripters
+something to play with. If you've got any suggestions for ARexx commands,
+you know where to send them.
+
+Of course, I aim to increase the command set. :)
+
+If you have any suggestions for features that @{b}you@{ub} would like to see
+in the next release, e-mail me! My address is in the @{"Contacting", Link Contact} section.
+
+@EndNode
+@Node Ack "Acknowledgements"
+
+                             Acknowledgements
+                             ----------------
+
+Thanks go to the following people...
+
+@{i}Pascal Gloor (Logixs on Undernet IRC)@{ui} - For a wealth of help
+and information about TCP/IP programming and IRC protocols. Your help
+is very much appreciated! And thanks for being patient. :-)
+
+@{i}Rune Jacobsen (Shitlips on Undernet IRC)@{ui} - For hints and tips
+about the world of MUI. Thanks for your help and patience.
+
+@{i}The users of #AmigaCafe Undernet@{ui} - For putting up with @{i}Ilona@{ui}
+in its numerous incarnations on the channel, right back to the days of
+ircII script! 
+
+@{i}Stefan Stuntz@{ui} - For creating MUI. It certainly revitalised this
+program. Click @{"here", Link About_MUI} for more details.
+
+@{i}Eric Totel@{ui} - For creating MUIBuilder, which allowed me to get the
+GUI designed and working in as little time as possible.
+
+@{i}Colin May (Rael on Undernet IRC)@{ui} - For submitting your groovy
+user command file, which was finished before I had finished coding the system
+behind it all. :)
+
+@{u}The registered users...@{uu}
+
+@{i}Neil Thurlow@{ui} - For being the first to register @{i}Ilona@{ui}, and for
+bug reports and ideas! Not to mention running the XPansions BBS. :)
+
+@{i}Frederik Thiesen@{ui} - For reporting that rather nasty HTML_HEADER bug.
+
+Of course, many thanks go to all those that took the time to register this
+piece of software. It's nice to see that someone cares. ;)
+
+@EndNode
+
+@Node About_MUI "About the Magic User Interface"
+
+                          This application uses
+
+
+                        MUI - MagicUserInterface
+
+                (c) Copyright 1992-97 by Stefan Stuntz
+
+
+MUI is a system to generate and maintain graphical user interfaces. With
+the  aid  of  a  preferences program, the user of an application has the
+ability to customize the outfit according to his personal taste.
+
+MUI is distributed as shareware. To obtain a complete package containing
+lots of examples and more information about registration please look for
+a  file  called  "muiXXusr.lha"  (XX means the latest version number) on
+your local bulletin boards or on public domain disks.
+
+          If you want to register directly, feel free to send
+
+
+                         DM 30.-  or  US$ 20.-
+
+                                  to
+
+                             Stefan Stuntz
+                        Eduard-Spranger-Straße 7
+                             80935 München
+                                GERMANY
+
+
+
+             Support and online registration is available at
+
+                          http://www.sasg.com/
+
+@EndNode
+
+@Node Contact "Contacting The Author"
+
+                           Contacting The Author
+                           ---------------------
+
+I would appreciate any comments, ideas and (gasp) bug reports on this
+release.
+
+SNAIL MAIL:       Tristan Greaves
+                  15 Little Mead
+                  Denmead
+                  Hampshire
+                  PO7 6HS
+                  ENGLAND
+
+INTERNET E-MAIL:  tmg296@ecs.soton.ac.uk
+FIDONET E-MAIL:   2:255/122.21@fidonet
+
+
+You can also find me loitering around on Undernet IRC as Mercenary in
+#amigacafe. With any luck, Ilona should be running there too, under the
+name of (guess what) Ilona. :)
+
+@EndNode
+
+@Node Dist "Distribution"
+
+                               Distribution
+                               ------------
+
+@{i}Ilona, @{ui} Copyright © 1997 Tristan Greaves.
+
+@{i}Ilona@{ui} is freely distributable, as long as the following rules are
+followed:
+
+1. No changes whatsoever are made to the archive or the files contained
+   within it. This includes adding BBS advert texts, by the way.
+
+2. No charge is made for electronic distribution, such as through e-mail,
+   ftp etc.
+
+3. Only a minimal charge may be made for distribution through snail mail,
+   to cover the cost of media and postage and packaging.
+
+4. Permission has been granted for @{i}Ilona@{ui} to be included on any
+   Aminet CD set. However, any other entity wishing to distribute the
+   package via CD should contact me first.
+
+5. Magazines wishing to distribute @{i}Ilona@{ui} should contact me first
+   for permission.
+
+6. Keyfiles are @{b}NOT@{ub} freely distributable. They are only to be
+   used by those that the author has specified.
+
+@{u}Getting Hold Of @{i}Ilona@{ui}@{uu}
+
+When a new version is released, it is uploaded to:
+
+1. The Aminet, in comm/tcp, with the filename Ilona.lha.
+   Home FTP Site: ftp.wustl.edu
+
+2. XPansions BBS (Official UK Ilona Support BBS)
+   Tel: +44 (0)1752 823424  ** Magic FREQ: ILONA
+   Fido: 2:255/122.0
+
+@EndNode
+
+

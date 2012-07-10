@@ -1,0 +1,3 @@
+echo LogBot compilation in progress...
+gcc -o lb -ansi main.c
+echo Compilation complete. Output file is lb.

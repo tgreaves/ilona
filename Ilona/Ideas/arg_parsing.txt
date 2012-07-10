@@ -1,0 +1,70 @@
+
+Date: 18 May 97  19:46:21
+From: Joel R. Hammond-Turner
+To:   Tristan Greaves
+Subj: Re: Ilona Registration
+
+^DOMAIN fidonet 2:443/13.92 fidonet 2:999/99.0
+^INTL 2:443/13 2:999/99
+^TOPT 92
+^MSGID: 2:999/99.0 <9705181946.AA001g9@musword.demon.co.uk>
+^REPLYADDR joel@musword.demon.co.uk
+^CHRS: LATIN-1 2
+^PID: AmiGate 1.6 (13.11.95)
+^
+^Mime-Version: 1.0
+^X-Mailer: Serious Voodoo 1.250 (Registered to Joel Hammond-Turner
+<joel@musword.demon.co.uk>)
+^In-Reply-To: <Pine.LNX.3.91.970518190927.5629G-200000@servalan>
+^Content-Type: text/plain; charset=ISO-8859-1
+^Content-Transfer-Encoding: 8bit
+^X-UIDL: 40f3f467c9dbbac581f121abb41de9f3
+^Status: RO
+^X-Status: 
+
+Hi Tristan
+> I'm not sure what you mean by a flexible argument parser. 
+
+OK - atm, you can get whatever arguments were passed to Ilona using $arg -
+i.e. usually a
+nick. But it'd be nice if you could select each argument in turn using
+$arg(0)... $arg(n), for example
+or else (and possibly even better!) use the parseargs functionality so Ilona
+commands can be
+as flexible as AmigaDOS command argument parsing.
+
+Look up ReadArgs under AmigaDOS reference, or see AmigaMail Volume 2, pages
+ii-27 to ii-30.
+
+That way, you can specify a template for a command, and parse it easily...
+
+example:
+
+Command: beer
+Description: Ilona goes and pours the specified type of beer and takes it to
+the specified nick.
+                         If no type is given then the default (Stella) is
+used.
+Template: beer Nick/K/A Male/S Female/S Type/K
+Usage: beer Fred Labatts 
+                        "Ilona goes to the bar and pours a Labatts. She then
+takes it to Fred, presenting it  on a silver tray."
+               beer Fred Male
+                        "Ilona goes to the bar and pours a Labatts. She then
+takes it to Fred, presenting it  to him on a silver tray."
+               beer Julie  Female Hooch
+                        "Ilona goes to the bar and pours a Hooch. She then
+takes it to Julie, presenting it  to her on a silver tray."
+
+You see what I mean? By using ReadArgs, you don't have to do the work
+yourself.
+
+Hope this helps
+
+Joel
+
+
+^Via 2:443/13.92@fidonet 21 Jun 97  13:50:48 (Mail Manager v1.22x/n #1505)
+
+
+

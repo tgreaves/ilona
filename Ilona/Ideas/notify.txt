@@ -1,0 +1,186 @@
+
+Date: 26 Apr 97  16:47:51
+From: Tomi Blinnikka
+To:   Tristan Greaves
+Subj: Re: Ilona v1.3 Released!
+
+^DOMAIN fidonet 2:443/13.92 fidonet 2:999/99.0
+^INTL 2:443/13 2:999/99
+^TOPT 92
+^MSGID: 2:999/99.0 <19970426.853C428.F614@tupu.megabaud.fi>
+^REPLYADDR docbliny@walrus.megabaud.fi
+^CHRS: LATIN-1 2
+^PID: AmiGate 1.6 (13.11.95)
+^
+^Mime-Version: 1.0
+^X-Mailer: Serious Voodoo 1.280 (Registered to Tomi Blinnikka
+<docbliny@megabaud.fi>)
+^In-Reply-To: <Pine.LNX.3.91.970426130042.12156F-100000@servalan>
+^Content-Type: text/plain; charset=ISO-8859-1
+^Content-Transfer-Encoding: quoted-printable
+^X-UIDL: a87065929608da6d7450e6a640ebe5b0
+^Status: RO
+^X-Status: A
+
+> Ahh. This means I'll have to start searching around for the documentation
+> for the call. :) If you have it there feel free to send it. :)
+
+dos.library/StartNotify                               dos.library/StartNotify
+
+   NAME
+StartNotify -- Starts notification on a file or directory (V36)
+
+   SYNOPSIS
+success = StartNotify(notifystructure)
+D0                          D1
+
+BOOL StartNotify(struct NotifyRequest *)
+
+   FUNCTION
+Posts a notification request.  Do not modify the notify structure while
+it is active.  You will be notified when the file or directory changes.
+For files, you will be notified after the file is closed.  Not all
+filesystems will support this: applications should NOT require it.  In
+particular, most network filesystems won't support it.
+
+   INPUTS
+notifystructure - A filled-in NotifyRequest structure
+
+   RESULT
+success - Success/failure of request
+
+   BUGS
+The V36 floppy/HD filesystem doesn't actually send notifications.  The
+V36 ram handler (ram:) does.  This has been fixed for V37.
+
+   SEE ALSO
+EndNotify(), <dos/notify.h>
+
+dos.library/EndNotify                                   dos.library/EndNotify
+
+   NAME
+EndNotify -- Ends a notification request (V36)
+
+   SYNOPSIS
+EndNotify(notifystructure)
+D1
+
+VOID EndNotify(struct NotifyRequest *)
+
+   FUNCTION
+Removes a notification request.  Safe to call even if StartNotify()
+failed.  For NRF_SEND_MESSAGE, it searches your port for any messages
+about the object in question and removes and replies them before
+returning.
+
+   INPUTS
+notifystructure - a structure passed to StartNotify()
+
+   SEE ALSO
+StartNotify(), <dos/notify.h>
+
+#ifndef DOS_NOTIFY_H
+#define DOS_NOTIFY_H
+/*
+**
+**$VER: notify.h 36.8 (29.8.90)
+**Includes Release 40.13
+**
+**dos notification definitions
+**
+**(C) Copyright 1989-1993 Commodore-Amiga, Inc.
+**    All Rights Reserved
+**
+*/
+
+#ifndef EXEC_TYPES_H
+#include "exec/types.h"
+#endif
+
+#ifndef EXEC_PORTS_H
+#include "exec/ports.h"
+#endif
+
+#ifndef EXEC_TASKS_H
+#include "exec/tasks.h"
+#endif
+
+
+/* use of Class and code is discouraged for the time being - we might want to
+   change things */
+/* --- NotifyMessage Class ------------------------------------------------ */
+#define NOTIFY_CLASS0x40000000
+
+/* --- NotifyMessage Codes ------------------------------------------------ */
+#define NOTIFY_CODE0x1234
+
+
+/* Sent to the application if SEND_MESSAGE is specified.    */
+
+struct NotifyMessage {
+    struct Message nm_ExecMessage;
+    ULONG  nm_Class;
+    UWORD  nm_Code;
+    struct NotifyRequest *nm_NReq;/* don't modify the request! */
+    ULONG  nm_DoNotTouch;/* like it says!  For use by handlers */
+    ULONG  nm_DoNotTouch2;/* ditto */
+};
+
+/* Do not modify or reuse the notifyrequest while active.    */
+/* note: the first LONG of nr_Data has the length transfered    */
+
+struct NotifyRequest {
+UBYTE *nr_Name;
+UBYTE *nr_FullName;/* set by dos - don't touch */
+ULONG nr_UserData;/* for applications use */
+ULONG nr_Flags;
+
+union {
+
+    struct {
+struct MsgPort *nr_Port;/* for SEND_MESSAGE */
+    } nr_Msg;
+
+    struct {
+struct Task *nr_Task;/* for SEND_SIGNAL */
+UBYTE nr_SignalNum;/* for SEND_SIGNAL */
+UBYTE nr_pad[3];
+    } nr_Signal;
+} nr_stuff;
+
+ULONG nr_Reserved[4];/* leave 0 for now */
+
+/* internal use by handlers */
+ULONG nr_MsgCount;/* # of outstanding msgs */
+struct MsgPort *nr_Handler;/* handler sent to (for EndNotify) */
+};
+
+/* --- NotifyRequest Flags ------------------------------------------------ */
+#define NRF_SEND_MESSAGE1
+#define NRF_SEND_SIGNAL2
+#define NRF_WAIT_REPLY8
+#define NRF_NOTIFY_INITIAL16
+
+/* do NOT set or remove NRF_MAGIC!  Only for use by handlers! */
+#define NRF_MAGIC0x80000000
+
+/* bit numbers */
+#define NRB_SEND_MESSAGE0
+#define NRB_SEND_SIGNAL1
+#define NRB_WAIT_REPLY3
+#define NRB_NOTIFY_INITIAL4
+
+#define NRB_MAGIC31
+
+/* Flags reserved for private use by the handler: */
+#define NR_HANDLER_FLAGS0xffff0000
+
+#endif /* DOS_NOTIFY_H */
+
+
+
+
+^Via 2:443/13.92@fidonet 21 Jun 97  13:50:42 (Mail Manager v1.22x/n #1505)
+
+
+

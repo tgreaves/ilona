@@ -1,0 +1,312 @@
+LogBot - History
+----------------
+
+                  * ALPHA TESTING - AUTHOR'S USE ONLY *
+
+v0.1alpha [12th January 1997]
+-----------------------------
+
+* First alpha release.
+* Main routines in place (Connections, parsing, channel/supervisor logging).
+* External configuration file used.
+* Developed on the Amiga.
+
+KNOWN BUGS/PROBLEMS WITH THIS RELEASE:
+
+* Bug: CTRL+C interrupt routine is bugged. Before connection, CTRL+C is
+  trapped correctly. However, during a connection it results in a guru, and
+  on most occasions a full system crash. I suspect this is due to my
+  continous "read" requests, preventing stdio from receiving the break.
+  (Note the "break" command has the same effect).
+
+* Bug: Config parsing. Must check that SERVER, NICKNAME and CHANNEL are
+  defined/set defaults. This is done already for PORT, but that is a simple
+  integer check. Solution: Set NICKNAME[0]='' ? THen check to see if it
+  is still =='' after parsing.
+
+* Bug: Crashes while waiting for Ping Test from london.uk.eu.undernet.org.
+  As yet, no explanation why this is happening.
+
+* Bug: Log files are being set binary characters. I think this is related
+  to the CTCP control code (re: PING).
+
+* Problem: As a consequence, LogBot can only be shutdown remotely, via
+  a QUIT IRC message! :-/
+
+* Problem: Code not portable. Relies on Amiga exec.library routines to
+  open bsdsocket.library. Have attempted to link with net.lib but for
+  some reason an "Undefined stub" error appears. Does not occur with any of
+  my other sources, and have not yet traced the problem. Suspect memory/
+  compiler problem. Will get updates.
+
+* Problem: For Amiga, icon-startup is allowed, but then it can't find
+  the default configuration file. Possible solution: #IFDEF AMIGA, set
+  configuraton file to LogBot:LogBot.config. Also disable LogBot's messaging
+  to stdio.
+
+* Idea: Under UNIX, shouldn't Logbot's default config be .logbotrc ?
+
+v0.2alpha [16th January 1997]
+-----------------------------
+
+* Now requires AmiTCP v4 or above (Due to net.lib linking).
+
+* Switched my TCP/IP stack to Miami, due to AmiTCP configuration problems.
+  However, Miami is fully AmiTCP compatable.
+
+* Amiga specific functions removed to make LogBot portable. Socket library
+  functions achived via linking to net.lib. The date/time grabbing routines
+  were causing the previous linking problem. 
+
+* First compile/test under Linux. Source code modified to account for
+  some function name differences between AmigaOS and Linux. LogBot appears
+  to function correctly! :-)
+
+* BUG FIX: CTRL+C / Breaking of LogBot now shuts down LogBot without a
+  crash. Fixed with error checking code (See later).
+
+* BUG FIX: LogBot no longer crashes if you pull the TCP/IP stack out from
+  underneath its feet, disconnect the modem etc.
+
+* LogBot now goes on "hold" until there is something waiting for it at
+  the socket, so should take up less CPU time.
+
+* Error checking added to server read/write calls. If there is an error,
+  LogBot will shut down without processing garbage.
+
+* Multiple LogBot's can be run with no problems, as different system and
+  channel log files can be specified.
+
+* The local shutdown is now "cleaner". If a server connection is in
+  progress, it is severed "nicely" with the QUIT command.
+
+* "PING received from server...." logging message removed, as server pings
+  clog up the logfile too much!
+
+* Added CTCP Support: ACTION, PING, VERSION. All CTCP *requests* are logged.
+
+* LogBot can now rejoin a channel if it is kicked from it (optional). 
+
+* Configuration:
+
+  -  SYSTEM_LOG, CHANNEL_LOG, USERNAME, REALNAME, SERVER_PASSWORD and
+     REJOIN_KICK options added.
+
+  -  Configuration parser now checks that all required entries are defined
+     before continuing. Missing definitions are reported.
+ 
+  -  Separate default filenames for AMIGA and UNIX.
+     ( Amiga = logbot.config    Unix = .logbotrc )
+
+  -  Default configuration now found when starting from Amiga Workbench.
+
+KNOWN BUGS/PROBLEMS WITH THIS RELEASE:
+
+* Bug: Will not connect to london.uk.eu.undernet.org (Ping problems). Am
+  not sure as yet why this is, despite improving the connection routines.
+
+* Bug: *Some* binary codes are still making their way into the log-file.
+  These are caused by IRC users sending graphical control codes, such as
+  CTRL+B.
+
+* Bug: REALNAME parameter can only take a single word...multiple words
+  are ignored.
+
+* Bug: Date/time routines not functioning due to net.lib bug.
+
+v0.3alpha [22nd January 1997]
+-----------------------------
+
+* Now only requires AmiTCP v2 or above on Amiga.
+
+* Bug in net.lib confirmed. Added extra OpenLibrary/CloseLibrary calls
+  under AmigaOS (instead of using net.lib) to solve the problem.
+
+* BUG FIX: Date/time stamping routines reimplemented!
+
+* All message parsing routines moved to a central block. Previously, some
+  were handled during the connection, which was resulting in code
+  duplication. For efficiency and compatability, duplicated code was
+  removed.
+
+* Initial security functions implemented. The "supervisor" details are
+  placed in the configuration file. When a supervisor-level command is
+  sent to LogBot (eg. QUIT) the sender's details are checked against those
+  in the configuration file. Both user ID and host are checked.
+
+* The bot can now be made "invisible" on IRC. This should help to prevent
+  "mass-user" messages cluttering up the log files.
+
+* Now some response is given to user commands if the command is not
+  recognised.
+
+* Added Command Support: LOG, SAY.
+
+* Added Error Support: 433 (Nickname in use).
+
+* Added CTCP Support: TIME.
+
+* Configuration:
+
+  -  INVISIBLE, SYSOP_USER and SYSOP_HOST options added.
+
+v1.0beta [23rd January 1997]
+----------------------------
+
+* Version number updated.
+* Distributed to beta-testers for testing.
+
+v1.1alpha [5th April 1997]
+--------------------------
+
+* Code tidied! Having just one file was getting a bit unwieldly. I have basically
+  done the first step - functions have been put into sections, and fully
+  prototyped (so things can be ordered a bit better). However, all compilation is
+  handled from main.c -- different modules can't be compiled separately. This is
+  the next thing to fix. :-)
+
+* HTML logging system added. If user wants it, the log will be in a format
+  suitable for viewing on the World Wide Web. Handles are made to show up
+  more, making the log much easier to read.
+
+* User definable HTML header added. If no HTML log-file exists, the
+  header will be copied to it. This will allow the user full control
+  over backdrops, colours, page name etc.
+
+* "HTML protection" - It is possible for HTML codes to be sent to the
+  channel, which will have an impact on the log! Thus there is now the
+  option for HTML brackets (< >) to be removed prior to storage.
+
+* Log-file archiving, preliminary system. At midnight, the log will be copied to
+  a file "logfilename.date". After this, the current log file is
+  restarted.
+
+* Log-file date/time stamping. User can specify whether to stamp each
+  entry with the time, or date&time.
+
+* In archive mode, the user can ask for the join/part/messages stats to be
+  appended to each archive.
+
+* User files! Now there are three sorts of users: "Normal", Privileged, and
+  "God". Privileged users basically have control over some of the logging
+  features, but the more "dangerous" commands (such as quit) are left to
+  the "God"users. The users are defined in an external file.
+
+* Added Command Support: HELP, SHOWCOMMANDS, STATUS.
+
+* Configuration:
+
+  -  HTML_LOG, HTML_HEADER, HTML_PROTECT, LOG_STAMP, LOG_STATS and
+     USERFILE options added.
+
+v1.2 [12th April 1997]  First public release
+--------------------------------------------
+
+* Renamed as Ilona!
+
+* Amiga AmigaGuide documentation written.
+
+* Amiga GUI created, using Magic User Interface (MUI).
+
+* Better GUI/Logging multi-tasking (1s idle time used).
+
+* Server retrying added. If a server error occurs, LogBot will attempt to
+  connect again, up to a limit specified by the user.
+
+* Userfile: New field: OP. If OP is in this field, user will be autoopped
+  when they join the channel. Also, they can use the OP command.
+
+* Userfile: Can now be re-loaded/saved at any time.
+
+* Userfile: New users can be added to it remotely via IRC. Also, OP and
+  PRIV fields may be adjusted on-line. Users can be deleted.
+
+* Registration... logbot.key file. Puts limits on number of users.
+  Registration is currently free. Ilona_KM and Ilona_KR utilities written
+  (For my personal use only). Unregistered limitations: Only three users
+  in the user file.
+
+* People can be kicked out of a channel (Optional kick message).
+  (Bans can also be set, via banmask system.)
+
+* BUG FIX: When launching from Workbench, configuration file now loaded
+  correctly.
+
+* BUG FIX: Erm, I now actually close logbot.config/userfile after using
+  them. >;-)
+
+* Added Command Support: ADDUSER, BAN, JOIN, KICK, PART, LOADUSERS, OP,
+  REMUSER, SAVEUSERS, SETOP, SETPRIV, UNBAN, VIEWUSER
+
+* Configuration:
+
+  - MAX_CONNECTS option added.
+
+v1.3 - 24th April 1997
+----------------------
+
+* BUG FIX: Ilona would guru nastily if HTML logging was enabled, and
+  the specified HTML_HEADER didn't exist. Fixed.
+
+* BUG FIX: REALNAME (in configuration file) could only cope with one
+  word entries! Fixed.
+
+* BUG FIX: SETPRIV didn't show in HELP command lists. Fixed.
+
+* BUG FIX: User validation routine fixed to not crash under Linux
+  (pointer error). 
+
+* Default system/channel log names are no longer used. This allows users
+  disable logging if required (Considering Ilona is growing beyond
+  just logging now).
+
+* Commands may now be issued in the channel, with a user-defined prefix.
+  For example, +showcommands.
+
+= User definable commands, courtesy of IlonaScript! :) Now an optional
+  file, containing a list of commands, levels, and what they do.
+
+* In registered version, user's name no longer appears if a CTCP VERSION
+  or FINGER request is made. Only the registration code does. This allows
+  Ilona users to remain anonymous on IRC, if they desire.
+
+* Comment lines (begining with #) and blank lines may now be used in the
+  user file, without affecting Ilona. Lost when user file saved.  (DON'T MENTION)
+
+* Documentation changed to point out that Ilona *DOES* support host
+  masking. It is done automatically, without wildcards being required.
+  Please see "User File" section for details.
+
+* Annoying autogreets! =) For each user in the user-file, you can specify
+  a greet which will be sent when they join the channel, if you want.
+
+* ARexx Support: Standard MUI Commmands documented.
+
+* DCC Support - Initial stuff going in...
+
+* CTCP Support: Adjusted to fit CTCP Standards.
+  New Commands: CLIENTINFO, FINGER.
+
+* Added Command Support: LOADCOMMANDS, ME, RAW, SETGREET
+
+* Added Configuration Options: COMMAND_CHAR, COMMAND_FILE
+
+v1.4 - xxth xx xx
+-----------------
+
+= BUG FIX: Commands sent via private, with the command character (e.g. !trout)
+  were being ignored by Ilona. (Fixed).
+
+= BUG FIX: Warning message to a user trying to use LOADCOMMANDS with no
+  command file specified in the configuration was broken. (Fixed).
+
+= BUG: ... flibble appearing on channel join with keyword??
+
+= BUG: keyword not found in configuration.
+
+
+ -- parsing.c file was destroyed at this point. :(
+    Restored from v1.3
+
+    Hence bug fixes above will have to be reimplemented.
+
