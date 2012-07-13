@@ -1,0 +1,114 @@
+ILONA v2
+
+Design/Code: Tristan Greaves.
+
+Mission Statement:
+------------------
+
+The original Ilona was my first major C project, and as such, was not programmed
+exceptionally well. It did not make an efficient use of memory, due to arrays being
+used most of the time, where linked lists would have been better.
+
+Ilona was also having a problem on Unix systems, where processor usage would spiral
+upwards.
+
+I have decided to re-code Ilona from scratch. Not only will this allow me to
+implement linked lists for more efficient use of memory, but I will be able to use
+such systems to make Ilona inherently capable of running multiple bots.
+
+Aims
+----
+
+	* Re-code Ilona to at least reach functionability of the previous version.
+	* Much more efficient use of memory and machine resources.
+	* Inherent support for multiple, multi-tasking bots with multiple servers.
+
+29th June
+---------
+
+* Multiple bot/multiple server lists now in place.
+* A bot successfully manages to connect to an IRC server port.
+* Basic configuration file parsing, which looks like it will be able to be
+  very powerful (reporting where errors are, and the like). Uses a look-up
+  table for extra speed.
+* Better layout in main() now - moving towards the config file being able to
+  do everything, without "test" bits being set instead.
+
+3rd July 1997
+-------------
+
+* All multiple bot/multiple server routines working. Bot connects to IRC server
+  in completeness.
+  
+* Configuration and user file loading/parsing complete.  
+  
+* IRC command and Ilona command parsing implemented.
+
+* HELP system implemented using external help file format.
+
+* Commands in: HELP, QUIT, RAW, SHOWCHANUSERS
+
+* Users added to ChanUser structs when they join, if not already present.
+
+Source code lengths. :)
+
+ (With no optimising)
+
+CODE:
+
+	FILE     		BYTES		LINES
+	
+	bot.c				5,645		297
+	config.c			8,130		450
+	logging.c		1,826		298
+	main.c			5,956		934
+	parsing.c	  14,813    729	
+	servers.c		4,448		215
+	users.c			4,875		273
+	
+HEADERS
+
+	FILE				BYTES		LINES
+
+	bot.h				4,134		114
+	config.h			  240     12
+	logging.h		1,552		 66
+	main.h			  501		 21
+	parsing.h		1,546		 65
+	servers.h		  559		 16
+	users.h			1,572		 71
+
+EXECUTABLE:  With no optimisations ....  45,944   (StormC)
+	    		 With full optimisations...  43,616   (StormC)
+	    		 
+4th July 1997
+-------------
+
+* BUG FIX: Ilona no longer goes into an infinite loop if ChanUser structure
+  is empty.
+  
+* OP and AUTOOP user file switches added. Ilona now auto-ops if required when
+  someone joins the channel.
+
+23rd September 1997
+-------------------
+
+* SHOWCOMMANDS: Displays all the commands that are available to a user,
+  arranged by level.
+  
+  Need to:  What if no commands are available ??
+  				Add FOR HELP TYPE.... bit on the end.
+  				  
+1st April 1998
+--------------
+
+This project has been left alone for a long time. :)
+
+It's difficult to know what I should do with it. Development might be better
+off under a Linux environment, but I haven't finished the porting yet.
+
+Or perhaps I should Java the entire thing ?
+(Could get a very nice GUI etc that way... )
+
+	    		 
+	    		 

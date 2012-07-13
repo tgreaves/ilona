@@ -1,0 +1,15 @@
+
+ CURRENT BUGS IN ILONA
+ ---------------------
+ 
+ * On "Too Many Connections" errors, Ilona seems to continue connecting,
+   regardless of max_retries.
+   
+ * No arguments passed to SHOWCHANUSERS results in gibberish. Need to
+   terminate line properly.
+  
+ FIXED BUGS:
+ ----------- 
+ 
+ * Ilona goes into infinite loop if attempting to do a find_chanuser when
+   the channel user list is empty.

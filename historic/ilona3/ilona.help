@@ -1,0 +1,23 @@
+# Help file for Ilona v2
+# © Copyright 1996-1997 Tristan Greaves.
+
+/OP
+Usage: OP [Channel] <Nick>
+Gives the specified user on the channel channel operator status. The channel name only needs to be specified if the bot is on more than one channel.
++END
+
+/QUIT
+Usage: QUIT
+Orders the bot to exit IRC. If more than one bot is being run by Ilona, only the one you send this command to will shut down.
++END
+
+/RAW
+Usage: RAW <Raw Text>
+Sends raw text from Ilona to the IRC server. Please only use this command if you know what you are doing! See RFC 1459 for a description of the IRC protocol.
++END
+
+/SHOWCHANUSERS
+Usage: SHOWCHANUSERS [Channel]
+Shows the users that Ilona thinks are on the specified channel, along with their userhosts. This command may only be used for channels Ilona is running on. The channel name can be left out if Ilona is only on one channel.
++END
+
