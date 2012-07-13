@@ -4,10 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>            /* For exit() */
 #include <string.h>
-/* #include <time.h> */
 #include <signal.h>
-#include <proto/exec.h>
-#include <exec/libraries.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 

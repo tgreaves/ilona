@@ -6,10 +6,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdbool.h>
 #include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <proto/socket.h>
 #include <netdb.h>
 #include <sys/errno.h>
 /* #include <pragmas/socket_pragmas.h> */
@@ -45,12 +45,12 @@ int get_host_stuff (struct Bot *b, int no) {
 	if (b->hp == NULL) {
 	
 		do_bot_log(b, "Server look-up failure: Unknown host %s", temp->Server);
-		return FALSE; 
+		return false; 
 		
 	} else {
 	
 	   b->port = temp->port;   /* Set latest port number */
-		return TRUE;
+		return true;
 		
 	}
 	
@@ -122,12 +122,12 @@ int do_connect (struct Bot *b) {
       SendToServer (b, "NICK %s", get_nick (b, b->current_nick)) ;
       SendToServer (b, "USER %s . . :%s", b->userid, b->description) ;
 
-		return TRUE;
+		return true;
 		
 	} else {
 	
 		do_bot_log(b, "Connection could not be established.");
-		return FALSE;
+		return false;
 	
    }
 

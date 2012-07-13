@@ -4,6 +4,10 @@
 
 #define SERVERS_H
 
+#ifndef BOT_H
+#include "bot.h"
+#endif /* BOT_H */
+
 int get_host_stuff (struct Bot *, int) ;    /* Prepare for connection */
 void prepare_socket (struct Bot *) ;        /* Prepare a TCP/IP socket */
 void kill_socket (struct Bot *) ;           /* Kill a TCP/IP socket */

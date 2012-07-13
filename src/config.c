@@ -374,7 +374,7 @@ void set_anonops (char *f) {
 
 	} else {
 
-		printf("Error parsing configuration file (line %d) - Can't define AnonOps ouuside a NewChannel/EndChannel definition.\n", line)
+		printf("Error parsing configuration file (line %d) - Can't define AnonOps ouuside a NewChannel/EndChannel definition.\n", line);
 
 	}
 
