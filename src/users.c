@@ -285,7 +285,7 @@ void load_users (struct Channel *chan) {
 
 	      for(i=0; uftable[i].Name; i++) {
 
-   	   	 if(stricmp(uftable[i].Name, command) == 0) {
+   	   	 if(strcasecmp(uftable[i].Name, command) == 0) {
 			
 						found=1;
    					(uftable[i].Func)(chan, bakstring + strlen (command)+1);

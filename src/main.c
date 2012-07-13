@@ -8,8 +8,6 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 
-#include "tg_socket_lib.h"
-
 #include "bot.h"
 #include "config.h"
 #include "main.h"
@@ -20,7 +18,6 @@
 struct sys_config *sc;
 struct Bots *thebots;
 struct Bot *mybot;
-struct Library *SocketBase = NULL;
 
 void main (int argc, char *argv[]) {
 
@@ -68,8 +65,6 @@ void main (int argc, char *argv[]) {
 
    /* System log file check */
 
-   openbsdsock();
-   
    /* Now go in a loop, attempting to connect each bot in turn */
 	
 	do_sys_log(sc, "Attempting bot connections.");
@@ -191,7 +186,7 @@ void main (int argc, char *argv[]) {
 
 		}
 
-		nb = WaitSelect (FD_SETSIZE, &read_template, NULL, NULL, &wait, NULL);
+		nb = select (FD_SETSIZE, &read_template, NULL, NULL, NULL);
 
 		if (nb <=0) {
 
@@ -248,12 +243,6 @@ void exit_nicely (int nice) {
 
     if (thebots) { free (thebots); }   /* Free Bot pointer structure */
 
-    if (SocketBase) {
-        
-        CloseLibrary(SocketBase);    /* Close bsdsocket.library */
-        
-    }
-    
     exit(nice) ;  /* For now */
    
 }
@@ -266,21 +255,6 @@ void SigInt (int sig) {
 
 	do_sys_log(sc, "User break detected.") ;
 	exit_nicely(0);
-
-}
-
-/* AMIGA - open the bsdsocket.library... TCP/IP stack required */
-
-void openbsdsock (void) {
-
-   SocketBase = OpenLibrary ( (unsigned char *)"bsdsocket.library",(unsigned long)2);
-   
-   if (!SocketBase) {
-    
-      do_sys_log(sc, "Fatal Error: Unable to open bsdsocket.library");      
-      exit_nicely(0);
-
-   }
 
 }
 

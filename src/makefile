@@ -17,10 +17,10 @@ logging.o:  logging.c bot.h config.h logging.h main.h users.h
 bot.o:      bot.c config.h bot.h logging.h main.h servers.h users.h
 	$(CC) $(CFLAGS) -c bot.c
 
-main.o:     main.c bot.h tg_socket_lib.h bot.h config.h main.h logging.h servers.h parsing.h users.h
+main.o:     main.c bot.h bot.h config.h main.h logging.h servers.h parsing.h users.h
 	$(CC) $(CFLAGS) -c main.c
 
-servers.o:  servers.c tg_socket_lib.h servers.h config.h bot.h logging.h main.h users.h
+servers.o:  servers.c servers.h config.h bot.h logging.h main.h users.h
 	$(CC) $(CFLAGS) -c servers.c
 
 users.o:  users.c config.h bot.h logging.h users.h main.h

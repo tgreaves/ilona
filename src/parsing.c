@@ -10,6 +10,7 @@
 #include "parsing.h"
 #include "servers.h"
 #include "main.h"
+#include "users.h"
 
 extern struct sys_config *sc;
 
@@ -303,7 +304,7 @@ void parse_join (struct Bot *b, char *f) {
 	temp = strchr ( lf, '!' );
 	*temp='\0';
 	
-	if ( stricmp ( lf, get_nick (b, b->current_nick) ) == 0) {
+	if ( strcasecmp ( lf, get_nick (b, b->current_nick) ) == 0) {
 	
 		do_bot_log (b, "Bot joined channel. Ignoring...") ;
 		
@@ -318,7 +319,7 @@ void parse_join (struct Bot *b, char *f) {
 		
 		for ( i=1; i<=b->no_channels; i++) {
 		
-			if ( stricmp ( get_channel (b, i)->channel, f2)==0) {
+			if ( strcasecmp ( get_channel (b, i)->channel, f2)==0) {
 			
 				found=1;
 				chan = get_channel (b,i);
@@ -384,7 +385,7 @@ void parse_privmsg (struct Bot *b, char *f) {
 
 	sscanf (f, "%s ", temp_line);    /* Get nick/channel */
 	
-	if ( stricmp (temp_line, get_nick (b, b->current_nick)) == 0) {
+	if ( strcasecmp (temp_line, get_nick (b, b->current_nick)) == 0) {
 	
 		/* Wow, it's a message just for us */
 		
@@ -437,7 +438,7 @@ void parse_privmsg (struct Bot *b, char *f) {
 		
 			for(i=0; ilonatable[i].Name; i++) {
 
-  				if(stricmp(ilonatable[i].Name, command) == 0) {
+  				if(strcasecmp(ilonatable[i].Name, command) == 0) {
 	
 					found=1;
 
@@ -606,7 +607,7 @@ void ilona_help (struct Bot *b, struct User *us, char *f) {
 				st++;
 				sscanf (st, "%s ", command) ;
 				
-				if ( stricmp ( command, f) == 0) {
+				if ( strcasecmp ( command, f) == 0) {
 				
 					/* User wanted help on this command */
 					
@@ -673,7 +674,7 @@ void ilona_op (struct Bot *b, struct User *us, char *f) {
 
 	for (i=0; i<=b->no_channels; i++) {
 	
-		if ( stricmp (chan, get_channel (b, i)->channel) == 0) {
+		if ( strcasecmp (chan, get_channel (b, i)->channel) == 0) {
 		
 			match=i;
 			chann = get_channel (b,i);
@@ -692,7 +693,7 @@ void ilona_op (struct Bot *b, struct User *us, char *f) {
 		
 		for (i=0; i<=chann->no_cusers; i++) {
 		
-			if ( stricmp (who, get_chanuser (chann, i)->nick)==0) {
+			if ( strcasecmp (who, get_chanuser (chann, i)->nick)==0) {
 			
 				match=i;
 				use = get_chanuser (chann,i);
@@ -753,7 +754,7 @@ void ilona_showchanusers (struct Bot *b, struct User *us, char *f) {
 		
 		for (i=1; i<=b->no_channels; i++) {
 		
-			if ( stricmp ( get_channel (b,i)->channel, f) == 0) {
+			if ( strcasecmp ( get_channel (b,i)->channel, f) == 0) {
 			
 				found = 1;
 				chan= get_channel (b,i);
@@ -897,7 +898,7 @@ void parse_irc (struct Bot *b) {
 
  	for(i=0; irctable[i].Name; i++) {
 
-  		if(stricmp(irctable[i].Name, command) == 0) {
+  		if(strcasecmp(irctable[i].Name, command) == 0) {
 	
 			found=1;
 

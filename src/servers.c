@@ -1,8 +1,5 @@
 /* Deals with Internet servers */
 
-/* #include <sys/types.h> */
-/* #include <sys/socket.h> */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -12,8 +9,6 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <sys/errno.h>
-/* #include <pragmas/socket_pragmas.h> */
-#include "tg_socket_lib.h"   /* My fixed socket pragmas for StormC */
 
 #include "servers.h"
 #include "config.h"
@@ -81,10 +76,9 @@ void prepare_socket (struct Bot *b) {
 
 void kill_socket (struct Bot *b) {
 
-	if (b->sock != NULL) {
+	if (b->sock) {
 	
-		CloseSocket (b->sock) ;
-		
+		shutdown (b->sock, 2);
    }
    
 }

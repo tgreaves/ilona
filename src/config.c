@@ -433,7 +433,7 @@ void load_config (char *filename) {
 
 	      for(i=0; configtable[i].Name; i++) {
 
-   	   	 if(stricmp(configtable[i].Name, command) == 0) {
+   	   	 if(strcasecmp(configtable[i].Name, command) == 0) {
 			
 						found=1;
    					(configtable[i].Func)(bakstring + strlen (command)+1);
