@@ -16,6 +16,33 @@ extern struct sys_config *sc;
 char temp_line[100];
 char temp_line2[100];
 
+struct irctab irctable[] = {
+
+   {"PING", parse_ping },
+   {"001", parse_001 },
+   {"353", parse_353 },
+   {"372", parse_372 },
+    {"433", parse_433 },
+    {"473", parse_473 },
+    {"JOIN", parse_join },
+    {"PRIVMSG", parse_privmsg },
+    {"ERROR", parse_error },
+   {NULL, NULL}
+
+};
+
+struct ilonatab ilonatable[] = {
+
+    {"OP", 2, ilona_op },
+    {"HELP", 1, ilona_help },
+    {"QUIT", 10, ilona_quit },
+    {"RAW", 10, ilona_raw },
+    {"SHOWCHANUSERS", 10, ilona_showchanusers},
+    {"SHOWCOMMANDS", 1, ilona_showcommands},
+    {NULL, NULL}
+
+};
+
 /* Search for a given token */
 
 char *GetToken(char *source, char *starttokens, char *endtokens)

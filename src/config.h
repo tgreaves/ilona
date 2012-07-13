@@ -41,28 +41,4 @@ struct configtab {
    void (*Func)(char *);
 } ;
 
-/* Next we fill that with the commands and their functions */
-
-struct configtab configtable[] = {
-
-   {"SYSTEM_LOG", set_systemlog },
-   {"NEWBOT", set_newbot },
-   {"ENDBOT", set_endbot },
-	{"BOT_LOG", set_botlog },
-	{"NICKNAME", set_nickname },
-	{"USER_ID", set_userid },
-	{"DESCRIPTION", set_description },
-   {"SERVER", set_server },
-   {"MAX_CONNECTS", set_maxconnects },
-   {"LOG_MOTD", set_motd },
-	{"NEWCHANNEL", set_newchannel },
-	{"ENDCHANNEL", set_endchannel },
-	{"CHANNEL", set_channel },
-	{"USERFILE", set_userfile },
-	{"CHANNEL_LOG", set_chanlog },
-	{"ANONOPS", set_anonops },
-   {NULL, NULL}
-
-};
-
 #endif /* CONFIG_H */

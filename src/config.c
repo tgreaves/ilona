@@ -18,6 +18,28 @@ int edit_channel;					/* Set if we are currently defining a channel */
 int line;                     /* Which line in config, to report errors */
 int cfg_error;
 
+struct configtab configtable[] = {
+
+   {"SYSTEM_LOG", set_systemlog },
+   {"NEWBOT", set_newbot },
+   {"ENDBOT", set_endbot },
+    {"BOT_LOG", set_botlog },
+    {"NICKNAME", set_nickname },
+    {"USER_ID", set_userid },
+    {"DESCRIPTION", set_description },
+   {"SERVER", set_server },
+   {"MAX_CONNECTS", set_maxconnects },
+   {"LOG_MOTD", set_motd },
+    {"NEWCHANNEL", set_newchannel },
+    {"ENDCHANNEL", set_endchannel },
+    {"CHANNEL", set_channel },
+    {"USERFILE", set_userfile },
+    {"CHANNEL_LOG", set_chanlog },
+    {"ANONOPS", set_anonops },
+   {NULL, NULL}
+
+};
+
 /* err_notinbot */
 /* Short-cut to report attempt to define a command when not in a bot */
 

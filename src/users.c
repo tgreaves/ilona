@@ -5,10 +5,10 @@
 #include <string.h>
 #include <time.h>
 
-#include "config.h"
 #include "bot.h"
-#include "logging.h"
 #include "users.h"
+#include "config.h"
+#include "logging.h"
 #include "main.h"
 
 extern struct sys_config *sc;
@@ -16,6 +16,19 @@ char temp_line[81];
 int edit_user;                 /* Set if we are currently defining a user */
 int line;                      /* Which line in config, to report errors */
 int cfg_error;
+
+struct uftab uftable[] = {
+
+   {"NEWUSER", set_newuser },
+   {"ENDUSER", set_enduser },
+   {"NICK", set_nick },
+    {"NUH", set_NUH },
+    {"LEVEL", set_level },
+    {"OP", set_op },
+    {"AUTOOP", set_autoop },
+   {NULL, NULL}
+
+};
 
 /* Insert a new user onto the user list */
 

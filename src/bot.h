@@ -25,10 +25,6 @@ struct Nickname {
 
 } ;
 
-#ifndef USERS_H
-#include "users.h"
-#endif
-
 /* Channel structure */
 
 struct Channel {

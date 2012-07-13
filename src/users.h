@@ -47,25 +47,7 @@ struct uftab {
    void (*Func)(struct Channel *, char *);
 } ;
 
-/* Next we fill that with the commands and their functions */
-
-struct uftab uftable[] = {
-
-   {"NEWUSER", set_newuser },
-   {"ENDUSER", set_enduser },
-   {"NICK", set_nick },
-	{"NUH", set_NUH },
-	{"LEVEL", set_level },
-	{"OP", set_op },
-	{"AUTOOP", set_autoop },
-   {NULL, NULL}
-
-};
 /* Prototypes */
-
-#ifndef BOT_H
-#include "bot.h"
-#endif
 
 void insert_user (struct Channel *);
 struct User * get_user (struct Channel *, int);
