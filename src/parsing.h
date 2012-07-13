@@ -26,18 +26,20 @@ void ilona_showcommands (struct Bot *, struct User *, char *);
 /* irctab */
 /* Structure to hold IRC protocol commands */
 
-struct irctab {
-   char  *Name;
-   void (*Func)(struct Bot *, char *);
+struct irctab
+{
+    char  *Name;
+    void (*Func)(struct Bot *, char *);
 } ;
 
 /* ilonatab */
 /* Structure to hold Ilona's commands */
 
-struct ilonatab {
-	char *Name;
-	int level;
-	void (*Func)(struct Bot *, struct User *, char *);
+struct ilonatab
+{
+    char *Name;
+    int level;
+    void (*Func)(struct Bot *, struct User *, char *);
 } ;
 
 #endif

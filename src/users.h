@@ -17,34 +17,37 @@ void set_autoop (struct Channel *, char *);
 
 /* Channel user structure */
 
-struct ChanUser {
+struct ChanUser
+{
 
-	char nick[12];							/* User's nickname */
-	char NUH[30];							/* nick!user@host */
-	struct ChanUser *next;				/* Pointer to the next one */
+    char nick[12];							/* User's nickname */
+    char NUH[30];							/* nick!user@host */
+    struct ChanUser *next;				/* Pointer to the next one */
 
 };
 
 /* "Proper" user structure */
 /* Associated with a channel */
 
-struct User {
+struct User
+{
 
-	struct User *next;    /* Pointer to the next user */
-	
-	char nick[12];        /* Last nick we knew them by */
-	char NUH[30];         /* nick!user@host - wildcarded?? */
-	int level;				 /* The user's level */
-	int op;               /* 1 = User may have ops, 0 = No */
-	int autoop;				 /* 1 = Give ops on join, 0 = No */
+    struct User *next;    /* Pointer to the next user */
+
+    char nick[12];        /* Last nick we knew them by */
+    char NUH[30];         /* nick!user@host - wildcarded?? */
+    int level;				 /* The user's level */
+    int op;               /* 1 = User may have ops, 0 = No */
+    int autoop;				 /* 1 = Give ops on join, 0 = No */
 
 };
 
 /* uftab - The structure of the user-file command list */
 
-struct uftab {
-   char  *Name;
-   void (*Func)(struct Channel *, char *);
+struct uftab
+{
+    char  *Name;
+    void (*Func)(struct Channel *, char *);
 } ;
 
 /* Prototypes */

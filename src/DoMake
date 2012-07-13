@@ -1,7 +1,0 @@
-; AmigaDOS
-
-; Script to update the SMakefile for Ilona.
-
-mkmk FORCE TARGET=Ilona
-
-

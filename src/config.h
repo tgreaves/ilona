@@ -28,7 +28,8 @@ void set_anonops (char *);
 /* sys_config  ==   Configuration details which will apply to all bots that are running. */
 /*                  (System logging filenames etc) */
 
-struct sys_config {
+struct sys_config
+{
 
     char systemlog [100] ;    /*  System log file filename. */
 
@@ -36,9 +37,10 @@ struct sys_config {
 
 /* configtab - The structure of the commands and the function to be called */
 
-struct configtab {
-   char  *Name;
-   void (*Func)(char *);
+struct configtab
+{
+    char  *Name;
+    void (*Func)(char *);
 } ;
 
 #endif /* CONFIG_H */

@@ -29,6 +29,9 @@ users.o:  users.c config.h bot.h logging.h users.h main.h
 parsing.o:  parsing.c config.h bot.h logging.h users.h main.h
 	$(CC) $(CFLAGS) -c parsing.c
 
+style:
+	astyle --style=allman *.c *.h
+
 clean:
-	rm -f *.o
+	rm -f *.o *.orig
 

@@ -1,4 +1,0 @@
-FROM LIB:c.o "config.o"+"logging.o"+"bot.o"+"main.o"+"servers.o"
-TO "Ilona"
-LIB LIB:sc.lib LIB:amiga.lib
-
