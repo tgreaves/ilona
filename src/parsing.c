@@ -752,17 +752,15 @@ void ilona_op (struct Bot *b, struct User *us, char *f)
 
         sscanf (f, "%s ", who);
         strcpy (chan, get_channel (b,1)->channel) ;  /* Only one channel! */
-
     }
 
     /* First see if the channel exists */
 
-    for (i=0; i<=b->no_channels; i++)
+    for (i=1; i<=b->no_channels; i++)
     {
 
         if ( strcasecmp (chan, get_channel (b, i)->channel) == 0)
         {
-
             match=i;
             chann = get_channel (b,i);
             break;
@@ -779,7 +777,7 @@ void ilona_op (struct Bot *b, struct User *us, char *f)
 
         match=0;
 
-        for (i=0; i<=chann->no_cusers; i++)
+        for (i=1; i<=chann->no_cusers; i++)
         {
 
             if ( strcasecmp (who, get_chanuser (chann, i)->nick)==0)
@@ -1023,7 +1021,7 @@ void parse_irc (struct Bot *b)
             found=1;
 
             (irctable[i].Func)(b, buf + strlen (command)+1);
-
+            break;
         }
 
     }

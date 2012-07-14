@@ -500,8 +500,6 @@ void load_config (char *filename)
         while ( fgets (string, (int) sizeof(string)-1, cfgfile) != 0 )
         {
 
-            printf("Line: %s", string);
-
             line++;
             strcpy (bakstring, string);
             sscanf (string, "%s ", command);
@@ -514,7 +512,6 @@ void load_config (char *filename)
                 if(strcasecmp(configtable[i].Name, command) == 0)
                 {
 
-/*                     printf("Command: %s", command); */
                     found=1;
                     (configtable[i].Func)(bakstring + strlen (command)+1);
 
