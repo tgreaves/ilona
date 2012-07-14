@@ -317,7 +317,7 @@ void load_users (struct Channel *chan)
     edit_user = 0;
     cfg_error = 0;
 
-    if ( cfgfile = fopen (chan->userfile, "r") )
+    if ( (cfgfile = fopen (chan->userfile, "r")) != NULL )
     {
 
         /* Load it */
@@ -327,7 +327,7 @@ void load_users (struct Channel *chan)
 
             line++;
             strcpy (bakstring, string);
-            sscanf (string, "%s ", &command);
+            sscanf (string, "%s ", command);
 
             found=0;
 

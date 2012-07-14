@@ -15,7 +15,6 @@
 
 void exit_nicely (int) ;      /* Shut everything down properly */
 void SigInt (int);            /* Handle Amiga's BREAK signal */
-void openbsdsock (void);      /* AMIGA: Open bsdsocket.library */
 void titles (void);           /* Print CLI titles */
 
 #endif /* MAIN_H */

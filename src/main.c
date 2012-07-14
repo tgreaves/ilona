@@ -5,6 +5,7 @@
 #include <stdlib.h>            /* For exit() */
 #include <string.h>
 #include <signal.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 
@@ -19,7 +20,7 @@ struct sys_config *sc;
 struct Bots *thebots;
 struct Bot *mybot;
 
-void main (int argc, char *argv[])
+int main (int argc, char *argv[])
 {
 
     fd_set read_template;
@@ -185,7 +186,7 @@ void main (int argc, char *argv[])
         /* Prepare socket selection waiting */
         /* This must be done each loop, as a bot may have "dropped out" */
 
-        memset (&read_template, NULL, sizeof(read_template));
+        memset (&read_template, 0, sizeof(read_template));
         ok=0;
 
         for (count=1; count<=no_bots(thebots); count++)

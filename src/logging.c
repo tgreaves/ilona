@@ -55,7 +55,7 @@ void do_sys_log ( struct sys_config *sc, char *format, ... )
     if ( sc->systemlog[0] != '\0' )
     {
 
-        if ( file = fopen (sc->systemlog, "a" ) )
+        if ( (file = fopen (sc->systemlog, "a" )) != NULL)
         {
 
             dat = time (NULL) ;
@@ -87,7 +87,7 @@ void do_bot_log ( struct Bot *b, char *format, ... )
     if ( b->botlog[0] != '\0' )
     {
 
-        if ( file = fopen (b->botlog, "a" ) )
+        if ( (file = fopen (b->botlog, "a" )) != NULL )
         {
 
             dat = time (NULL) ;

@@ -42,7 +42,7 @@ struct ilonatab ilonatable[] =
     {"RAW", 10, ilona_raw },
     {"SHOWCHANUSERS", 10, ilona_showchanusers},
     {"SHOWCOMMANDS", 1, ilona_showcommands},
-    {NULL, NULL}
+    {NULL, 0, NULL}
 
 };
 
@@ -81,9 +81,10 @@ char *GetToken(char *source, char *starttokens, char *endtokens)
 void GetNUH (char *source)
 {
 
+    /*
     char nuh[50];
 
-    /* */
+    */
 
 }
 

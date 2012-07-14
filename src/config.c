@@ -56,7 +56,7 @@ void err_notinbot (char *f)
 void set_systemlog (char *f)
 {
 
-    sscanf (f, "%s ", &sc->systemlog);
+    sscanf (f, "%s ", sc->systemlog);
 
 }
 
@@ -77,7 +77,6 @@ void set_newbot (char *f)
 
         printf("Error parsing configuration (line %d) - Can't define a bot inside another bot!\n", line);
         cfg_error=1;
-
     }
 
 }
@@ -492,7 +491,7 @@ void load_config (char *filename)
     edit_channel =0;
     cfg_error = 0;
 
-    if ( cfgfile = fopen (filename, "r") )
+    if ( (cfgfile = fopen (filename, "r")) != NULL )
     {
 
         /* Load it */
@@ -502,10 +501,11 @@ void load_config (char *filename)
         while ( fgets (string, (int) sizeof(string)-1, cfgfile) != 0 )
         {
 
+            printf("Line: %s", string);
+
             line++;
             strcpy (bakstring, string);
-            /* command = GetToken (string, " ", " ") ; */
-            sscanf (string, "%s ", &command);
+            sscanf (string, "%s ", command);
 
             found=0;
 
@@ -515,6 +515,7 @@ void load_config (char *filename)
                 if(strcasecmp(configtable[i].Name, command) == 0)
                 {
 
+                    printf("Command: %s", command);
                     found=1;
                     (configtable[i].Func)(bakstring + strlen (command)+1);
 
@@ -525,14 +526,18 @@ void load_config (char *filename)
             {
 
                 /* Report than an unknown configuraton command was used */
-
                 printf("Error parsing configuration (line %d) - Unknown command %s\n", line, command);
 
             }
 
+            strcpy(string, "");
+            strcpy(command, "");
+
         }
 
         fclose (cfgfile) ;
+
+        printf("Completed configuration file parsing.\n");
 
         if (cfg_error==1)
         {

@@ -1,0 +1,7 @@
+# Example ilona.users file.
+
+NewUser
+Nick testuser
+NUH testuser!test@*.domain.com
+Level 10
+EndUser

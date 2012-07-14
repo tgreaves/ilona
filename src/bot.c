@@ -19,7 +19,7 @@ struct Bot * create_bot (void)
 
     struct Bot *newbot;
 
-    if ( newbot = (struct Bot *)malloc(sizeof(struct Bot)))
+    if ( (newbot = (struct Bot *)malloc(sizeof(struct Bot))) != NULL)
     {
 
         /* Allocated ok. Set defaults */
@@ -31,7 +31,7 @@ struct Bot * create_bot (void)
         newbot->servers = 0 ;
         newbot->current_server = 0;
         newbot->connected=0;
-        newbot->sock = NULL ;
+        newbot->sock = 0;
         newbot->port = 6667 ;   /* Default port for IRC */
         newbot->next = NULL;
         newbot->max_connects = 0;
