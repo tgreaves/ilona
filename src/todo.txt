@@ -7,9 +7,10 @@ Low Priority
  
 High Priority
 -------------
-
+ 
  ** Make sure that command with no argument parsing is ok.
  ** Make sure SHOWCHANUSERS is not broken on channel with no users.
  ** Add all channel users to channel when Ilona joins a channel.
     (Do this with the xxx messages from server).
+ ** Bots need to be aware of whether they are opped or not.
        	 
