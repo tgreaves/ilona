@@ -23,7 +23,7 @@ struct Bot *mybot;
 int main (int argc, char *argv[])
 {
 
-    fd_set read_template;
+    struct fd_set read_template;
     struct timeval wait;
     int nb, count, temp, ok, attempts, dns_fail;
 
@@ -186,7 +186,8 @@ int main (int argc, char *argv[])
         /* Prepare socket selection waiting */
         /* This must be done each loop, as a bot may have "dropped out" */
 
-        memset (&read_template, 0, sizeof(read_template));
+        /* memset (&read_template, 0, sizeof(read_template)); */
+        FD_ZERO(&read_template);
         ok=0;
 
         for (count=1; count<=no_bots(thebots); count++)
@@ -225,7 +226,7 @@ int main (int argc, char *argv[])
 
         /* Process each bot to see if something was sent to it */
 
-        for (count=0; count<=no_bots(thebots); count++)
+        for (count=1; count<=no_bots(thebots); count++)
         {
 
             mybot = get_bot (thebots, count);

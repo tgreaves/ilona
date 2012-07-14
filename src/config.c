@@ -227,14 +227,13 @@ void set_server (char *f)
 {
 
     int port;
-    char *temp;
-    char *tail;
+    char temp[100];
 
     if (edit_bot == 1)
     {
 
         sscanf (f, "%s %s ", temp_line, temp);    /* Split up */
-        port = strtol (temp, &tail, 0);           /* Comvert port number */
+        port = strtol (temp, NULL, 0);           /* Comvert port number */
         insert_IRCServer ( get_bot (thebots, 1), temp_line, port ) ;
 
     }
@@ -515,7 +514,7 @@ void load_config (char *filename)
                 if(strcasecmp(configtable[i].Name, command) == 0)
                 {
 
-                    printf("Command: %s", command);
+/*                     printf("Command: %s", command); */
                     found=1;
                     (configtable[i].Func)(bakstring + strlen (command)+1);
 

@@ -1,37 +1,29 @@
 ilona
 =====
 
-IRC bot for AmigaOS.
+A simple IRC bot.
 
-A little bit of history, considering that this dates back to 1997.
+This was originally written for the Amiga in 1997.  The various sources for that may be found in the 'historic' directory:
 
-StormC was the software used to put it together.
+* Ilona: As released on Aminet at the time.
+* Ilona_KeyMaker: Key generator for Ilona.  Some outstanding algorithms at play here (!)
+* Ilona_KeyReader: Reads generated keys.
+* Ilona2: A partial re-write of Ilona in C++.  The intention was to allow multiple bots from within a single executable (OO).
+* ilona3: Goal the same as Ilona2, although written in C.  
 
-Sub-directories are as follows:
+I have now been working on getting this to run nicely under Linux/gcc.  This is the source in 'src', based on that in 'ilona3'.  The Amiga support has been dropped from this.
 
-Ilona
------
+For testing, ngircd is a good IRC server: http://ngircd.barton.de/
 
-As released on Aminet at the time.  This was pretty much my first foray into C programming and it shows!
+Compiling
+---------
 
-Ilona_KeyMaker
---------------
+* make
 
-Key generator for Ilona.  Some outstanding algorithms at play here (!)
+Job done.
 
-Ilona_KeyReader
+Amiga Compiling
 ---------------
 
-Simple program to allow testing of generated keys.
-
-Ilona2
-------
-
-I started re-writing Ilona in C++.  The intention was to allow it to run multiple bots from within a single executable, using object-oriented practices.  
-
-ilona3
-------
-
-Back to C for this one, so I imagine forked from the original Ilona.  Ability for multiple bots is there and the code was changed to be 'Linux friendly'.
-
+If you want to try compiling the 'historic' sources, the StormC environment was used.
 

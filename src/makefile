@@ -1,7 +1,8 @@
 # Makefile.
 
 CC = gcc
-CFLAGS = -g -Wall -pedantic
+CFLAGS = -g -Wall -pedantic -Q -v
+#CFLAGS = -g -Wall -pedantic
 
 default: ilona
 
