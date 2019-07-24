@@ -23,7 +23,7 @@ struct Bot *mybot;
 int main (int argc, char *argv[])
 {
 
-    struct fd_set read_template;
+    fd_set read_template;
     struct timeval wait;
     int nb, count, temp, ok, attempts, dns_fail;
 
